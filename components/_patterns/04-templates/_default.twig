@@ -11,9 +11,19 @@
   {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar']) %}
 {% endif %}
 
+
+{# start layout #}
+
+{# fixed header #}
+{% include "@organisms/site-header/site-header.twig" %}
+
+{# start layout container #}
 <div {{ bem('layout-container', (layout_modifiers)) }}>
-  {% block page_header %}
-    {% include "@organisms/site-header/site-header.twig" %}
+
+  {% block primary_menu %}
+  {% endblock %}
+
+  {% block hero %}
   {% endblock %}
 
   {% block page_system %}
@@ -34,7 +44,16 @@
 
   </main>
 
-  {% block page_footer %}
-    {% include "@organisms/site-footer/_site-footer.twig" %}
+  {% block content_after %}
   {% endblock %}
+
+  {% block pre_footer %}
+  {% endblock %}
+
 </div>
+{# end layout container #}
+
+{# fixed footer #}
+{% include "@organisms/site-footer/_site-footer.twig" %}
+
+{# end layout #}
