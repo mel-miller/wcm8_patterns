@@ -13,7 +13,7 @@
 
 <div {{ bem('layout-container', (layout_modifiers)) }}>
   {% block page_header %}
-    {% include "@organisms/site/site-header/site-header.twig" %}
+    {% include "@organisms/site-header/site-header.twig" %}
   {% endblock %}
 
   {% block page_system %}
@@ -35,6 +35,6 @@
   </main>
 
   {% block page_footer %}
-    {% include "@organisms/site/site-footer/site-footer.twig" %}
+    {% include "@organisms/site-footer/_site-footer.twig" %}
   {% endblock %}
 </div>
