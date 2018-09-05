@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+wcm8_patterns.small:
+  label: small
+  mediaQuery: 'all and (min-width: 25em)'
+wcm8_patterns.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+wcm8_patterns.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+wcm8_patterns.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+wcm8_patterns.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'
