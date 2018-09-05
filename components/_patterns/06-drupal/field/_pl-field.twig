@@ -1,0 +1,43 @@
+{#
+This template is for display inside PL only and is meant to emulate drupal fields.
+#}
+
+<!-- TODO: why is clean_class not working in PL? -->
+
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+  ]
+%}
+
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{# field type variations #}
+{% if field_type == "link" %}
+  {# if link field #}
+  {% if label_hidden %}
+    <div class="{{ classes|join(' ') }} field__item"><a href="{{field_content_url}}">{{field_content}}</a></div>
+  {% else %}
+    <div class="{{ classes|join(' ') }}">
+      <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
+      <div class="{{ classes|join(' ') }} field__item"><a href="{{field_content_url}}">{{field_content}}</a></div>
+    </div>
+  {% endif %}
+{% else %}
+  {# if other field types #}
+  {% if label_hidden %}
+    <div class="{{ classes|join(' ') }} field__item">{{field_content}}</div>
+  {% else %}
+    <div class="{{ classes|join(' ') }}">
+      <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
+      <div class="{{ classes|join(' ') }} field__item">{{field_content}}</div>
+    </div>
+  {% endif %}
+{% endif %}

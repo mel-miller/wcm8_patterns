@@ -1,0 +1,6 @@
+field_name: field-link-to-tool
+field_type: link
+label: Link to Tool
+label_hidden: true
+field_content: link.to.toolset
+field_content_url: '#'

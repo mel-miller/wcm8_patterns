@@ -70,7 +70,12 @@
  *   in different view modes.
  */
 #}
-<article {{ bem("node") }}>
+
+{% if node_bundle|length == 0 %}
+  {% set node_bundle = node.bundle %}
+{% endif %}
+
+<article {{ bem('node', [node_bundle]) }}>
 
   {{ title_prefix }}
   {% if not page %}
@@ -87,16 +92,17 @@
 
   {% if display_submitted %}
     <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+      <div class="byline" {{ author_attributes }}>
+        By {{ author_name }}<span class="pipe"> | </span>{{ date }}
         {{ metadata }}
       </div>
     </footer>
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content }}
+    {% block node_content %}
+      {{ content }}
+    {% endblock %}
   </div>
 
 </article>
