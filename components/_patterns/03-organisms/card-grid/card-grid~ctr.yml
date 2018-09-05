@@ -6,6 +6,7 @@ cards:
   1:
     card_modifiers:
       1: "grid-item"
+      2: ctr
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
@@ -14,14 +15,13 @@ cards:
       1:
         "no-space"
     card_button_url:
-      "#"
     card_button_content:
-      'Read more'
     card_body:
       "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat."
   2:
     card_modifiers:
       1: "grid-item"
+      2: ctr
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
@@ -30,14 +30,13 @@ cards:
       1:
         no-space
     card_button_url:
-      "#"
     card_button_content:
-      'Read more'
     card_body:
       "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat."
   3:
     card_modifiers:
       1: "grid-item"
+      2: ctr
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
@@ -46,8 +45,6 @@ cards:
       1:
         no-space
     card_button_url:
-      "#"
     card_button_content:
-      'Read more'
     card_body:
       "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat."

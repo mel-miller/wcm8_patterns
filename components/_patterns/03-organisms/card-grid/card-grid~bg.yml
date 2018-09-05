@@ -6,6 +6,7 @@ cards:
   1:
     card_modifiers:
       1: "grid-item"
+      2: bg
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
@@ -22,6 +23,7 @@ cards:
   2:
     card_modifiers:
       1: "grid-item"
+      2: bg
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
@@ -38,6 +40,7 @@ cards:
   3:
     card_modifiers:
       1: "grid-item"
+      2: bg
     card_img_src:
       "http://i.chirkup.me/00/00/34/3436_728x.jpg"
     card_title:
