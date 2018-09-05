@@ -8,6 +8,13 @@ global:
     theme:
       dist/scripts.js: {}
 
+accordion:
+  js:
+    dist/02-molecules/accordion-item/accordion-item.js: {}
+
+blockquote:
+  js:
+    dist/01-atoms/02-text/02-blockquote/blockquote.js: {}
 
 main-menu:
   js:
@@ -19,15 +26,9 @@ sprite:
   js:
     components/js/svgxuse.min.js: { attributes: { defer: true } }
 
-accordion:
-  js:
-    dist/02-molecules/accordion-item/accordion-item.js: {}
-
 status:
   js:
     dist/02-molecules/status/status.js: {}
-  dependencies:
-    - core/drupal
 
 tabs:
   js:
