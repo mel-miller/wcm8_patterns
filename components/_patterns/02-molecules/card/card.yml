@@ -5,7 +5,6 @@ card_img_src:
   "https://placeimg.com/1280/720/nature"
 card_img_alt:
   "This is the card image's alt text"
-card_image_output_image_tag: TRUE
 
 # Title
 card_label:
@@ -17,15 +16,6 @@ card_title_modifiers:
   1:
     no-space
 card_title_blockname:
-
-# Subtitle
-card_subtitle:
-  "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
-card_subtitle_link:
-card_subtitle_modifiers:
-  1:
-    no-space
-card_subtitle_blockname:
 
 # Body
 card_body:

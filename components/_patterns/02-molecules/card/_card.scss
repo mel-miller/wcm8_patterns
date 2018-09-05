@@ -1,5 +1,5 @@
 .card__title {
-  @include heading-large($font-size: 1.3rem);
+  @include heading-large($font-size: 1.55rem);
   @include no-bottom;
 
   &-link {
@@ -7,11 +7,8 @@
   }
 }
 
-.card__subtitle {
-  @include heading-medium($font-size: 1rem);
-  @include no-bottom;
-
-  color: $gray;
+.card__copy {
+  padding: 1.25em 0.5em 1em;
 }
 
 .card__body {
@@ -29,5 +26,21 @@
 // Variations
 .card--bg {
   background-color: $gray-lightest;
-  padding: 1em;
+  padding: 0;
+
+  .card__copy {
+    padding: 1.5em 1.5em 1em;
+  }
+
+  .card__button {
+    margin: 0.5em 0;
+  }
+}
+
+.card--ctr {
+  text-align: center;
+
+  .card__body {
+    padding: 0 1.25em;
+  }
 }

@@ -1,4 +1,4 @@
-$breadcrumb-active: #bbb;
+$breadcrumb-active: $gray-darker;
 
 .breadcrumb {
   @include list-reset;
@@ -9,20 +9,23 @@ $breadcrumb-active: #bbb;
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $gray-light;
+  color: $gray;
   text-decoration: none;
 }
 
 .breadcrumb__link:hover {
-  color: $gray;
+  color: $gray-darker;
 }
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 
   &::after {
-    content: "/";
+    content: ">";
+    color: $gray;
+    font-weight: 700;
+    margin: 0 4px;
   }
 
   &:last-child {

@@ -25,6 +25,10 @@ accordion:
   js:
     dist/02-molecules/accordion-item/accordion-item.js: {}
 
+status:
+  js:
+    dist/02-molecules/status/status.js: {}
+
 tabs:
   js:
     dist/02-molecules/menus/tabs/tabs.js: {}

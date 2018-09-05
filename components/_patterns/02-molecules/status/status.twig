@@ -21,8 +21,11 @@
  *   - class: HTML classes.
  */
 #}
+
+{{ attach_library('wcm8_patterns/status') }}
+
 {% for type, messages in message_list %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
+  <div class="status-box" role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% if type == 'error' %}
       <div role="alert">
     {% endif %}
@@ -32,11 +35,11 @@
       {% if messages|length > 1 %}
         <ul>
           {% for message in messages %}
-            <li class="status--{{ type }}">{{ message }}</li>
+            <li class="status status--{{ type }}">{{ message }}</li>
           {% endfor %}
         </ul>
       {% else %}
-        <span class="status--{{ type }}">{{ messages|first }}</span>
+        <span class="status status--{{ type }}">{{ messages|first }}</span>
       {% endif %}
     {% if type == 'error' %}
       </div>
