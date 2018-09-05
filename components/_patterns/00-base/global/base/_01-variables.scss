@@ -4,16 +4,9 @@
 // components/_patterns/00-base/global/01-colors/_color-vars.scss
 // and breakpoint related vars into
 // components/_patterns/00-base/_breakpoints.scss
-
-// Fonts
-$font-body: "proximanova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-$font-heading: "proximanova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-
-$font: "proximanova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-$font-alt: 'Capita', "Times New Roman", serif;
-
-$proxima: $font-body;
-$capita: $font-alt;
+// and typography into
+// components/_patterns/00-base/global/typography/_typography.scss
+//
 
 // Spacing
 $space: 2rem;
