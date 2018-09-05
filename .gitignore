@@ -19,3 +19,6 @@ npm-debug.log
 .publish
 
 .DS_Store
+
+#ignore modules folder for now
+modules
