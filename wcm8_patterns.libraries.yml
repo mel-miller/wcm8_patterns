@@ -1,7 +1,15 @@
 global:
   css:
+    base:
+      //www.osu.edu/assets/fonts/webfonts.css: { external: true }
     theme:
       dist/style.css: {}
+  js:
+    base:
+      //use.fontawesome.com/releases/v5.0.6/js/all.js: { external: true }
+    theme:
+      dist/scripts.js: {}
+
 
 main-menu:
   js:
