@@ -5,8 +5,6 @@ global:
     theme:
       dist/style.css: {}
   js:
-    base:
-      //use.fontawesome.com/releases/v5.0.6/js/all.js: { external: true }
     theme:
       dist/scripts.js: {}
 
@@ -28,6 +26,8 @@ accordion:
 status:
   js:
     dist/02-molecules/status/status.js: {}
+  dependencies:
+    - core/drupal
 
 tabs:
   js:
