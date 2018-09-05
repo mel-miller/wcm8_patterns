@@ -4,13 +4,6 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
- <?php
-
- /**
-  * @file
-  * Functions to support theming in the Pattern Lab theme.
-  */
-
 
  /**
   * Adds additional theme settings.
