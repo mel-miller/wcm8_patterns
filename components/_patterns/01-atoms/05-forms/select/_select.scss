@@ -1,17 +1,17 @@
 // CSS-only select styling (from https://github.com/filamentgroup/select-css)
 
 .form-item__dropdown {
-  border: 1px solid $gray-lightest;
+  border: 1px solid $gray-lighter;
   display: block;
   position: relative;
 
   &::after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 9px solid $gray-darker;
+    border-top: 9px solid $gray;
     content: " ";
     position: absolute;
-    top: 42%;
+    top: 41%;
     right: 1em;
     z-index: 2;
 
@@ -21,22 +21,27 @@
   }
 
   &:hover {
-    border-color: $black;
+    border-color: $gray-light;
+
+    &::after {
+      border-top: 9px solid $gray-dark;
+    }
   }
 }
 
 .form-item__select {
   border: 1px solid $gray-lightest;
-  height: 41px; // set height required for discrepancy between .form-item__dropdown border and the select :focus border
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
   outline: none;
-  padding: 0.6em 0.8em 0.5em;
+  padding: 0.63em 0.8em;
   width: 100%;
 
   :focus {
-    outline: none;
-    color: #222;
+    border-color: $color-link--hover;
+    border-radius: 0;
+    border-style: dotted;
+    border-width: 1px;
   }
 }
 
@@ -60,8 +65,10 @@
     appearance: none;
 
     &:focus {
-      border-color: $gray;
+      border-color: $color-link--hover;
       border-radius: 0;
+      border-style: dotted;
+      border-width: 2px;
     }
   }
 }

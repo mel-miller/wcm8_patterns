@@ -1,0 +1,36 @@
+.blockquote {
+  border-left: solid 3px $gray-lighter;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+blockquote:not(.pulled-quote) {
+  @extend .blockquote;
+}
+
+.pulled-quote {
+  border: 0;
+  padding: 2em;
+  margin: 2em 0 1em;
+  position: relative;
+}
+
+.pulled-quote__icon {
+  color: $gray-lighter;
+  position: absolute;
+  top: 0.8em;
+}
+
+.pulled-quote__text {
+  font-family: $capita;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 115%;
+  line-height: 180%;
+  padding: 0;
+  padding-left: 3.5em;
+
+  p {
+    margin: 0 !important;
+  }
+}

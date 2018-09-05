@@ -1,6 +1,6 @@
 ---
 el: ".button"
-title: "Button Styling"
+title: "Button"
 ---
 ## Button Styling
 

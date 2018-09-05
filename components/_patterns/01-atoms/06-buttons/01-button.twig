@@ -20,6 +20,7 @@
   {% for attribute,value in button_attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
+  href="{{ button_url }}"
 >
   {% block button_content %}
     {{ button_content }}
