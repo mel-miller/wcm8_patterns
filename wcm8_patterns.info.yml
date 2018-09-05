@@ -61,3 +61,6 @@ component-libraries:
   pages:
     paths:
       - components/_patterns/05-pages
+  drupal:
+    paths:
+      - components/_patterns/05-drupal
