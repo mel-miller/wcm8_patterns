@@ -5,7 +5,7 @@
 {% embed "@drupal/node/_node.twig" %}
   {% block node_content %}
     {% if pl %}
-      {% include "@drupal/field/field-lt-description/field-lt-description.twig" with {
+      {% include "@drupal/fields/field-lt-description/field-lt-description.twig" with {
         field_content: field_lt_description,
         field_name: "field-lt-description",
         field_type: "text-long"

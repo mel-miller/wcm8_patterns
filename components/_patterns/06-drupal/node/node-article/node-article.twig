@@ -8,17 +8,17 @@ with {
 }%}
   {% block node_content %}
     {% if pl %}
-      {% include "@drupal/field/field-article-image/field-article-image.twig" with {
+      {% include "@drupal/fields/field-article-image/field-article-image.twig" with {
         field_content: field_article_image,
         field_name: "field-article-image",
         field_type: "image"
       } %}
-      {% include "@drupal/field/field-article-body/field-article-body.twig" with {
+      {% include "@drupal/fields/field-article-body/field-article-body.twig" with {
         field_content: field_article_body,
         field_name: "field-article-body",
         field_type: "text-long"
       } %}
-      {% include "@drupal/field/field-article-tags/field-article-tags.twig" with {
+      {% include "@drupal/fields/field-article-tags/field-article-tags.twig" with {
         field_content: field_article_tags,
         field_name: "field-article-tags",
         field_type: "entity-reference",
