@@ -9,12 +9,12 @@ $breadcrumb-active: $gray-darker;
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $gray;
+  color: $red;
   text-decoration: none;
 }
 
 .breadcrumb__link:hover {
-  color: $gray-darker;
+  color: $teal;
 }
 
 .breadcrumb__item {
