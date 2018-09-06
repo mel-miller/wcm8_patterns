@@ -10,6 +10,10 @@
   flex-flow: column nowrap;
 }
 
+.sg-pattern-example {
+  @include clearfix;
+}
+
 .sg-pattern {
   padding-bottom: 1em;
 }
