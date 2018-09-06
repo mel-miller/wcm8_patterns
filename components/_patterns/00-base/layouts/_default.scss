@@ -2,16 +2,23 @@
 // General Layout
 //
 
-$sidebar-width: 33%;
+$sidebar-width: 25%;
 $gutter: $space;
 $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
-.header,
 .main,
-.footer {
+.region-inner {
   @include wrapper;
 
-  margin-bottom: 4em;
+  margin-bottom: $space;
+}
+
+.main {
+  margin-top: $space;
+}
+
+.region-inner--help {
+  margin-bottom: 0;
 }
 
 //
@@ -26,7 +33,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 }
 
 .main-sidebar {
-  margin-bottom: $space-double;
+  margin-bottom: $space;
 
   @include large {
     order: 2;
