@@ -3,3 +3,13 @@
   margin-bottom: 0.5em;
   font-weight: 600;
 }
+
+.node--article .field--name-field-article-image {
+  float: right;
+  margin: 0 0 1em 1em;
+
+  img {
+    max-height: 16em;
+    //TODO rethink this once image styles are configured on the sites
+  }
+}

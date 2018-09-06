@@ -1,0 +1,16 @@
+field_name: field-article-tags
+field_type: entity-reference
+label: Tags
+label_hidden: false
+label_display: inline
+separator: ","
+items:
+  1:
+    url: "#"
+    content: "Dog"
+  2:
+    url: "#"
+    content: "Bird"
+  3:
+    url: "#"
+    content: "Dird"

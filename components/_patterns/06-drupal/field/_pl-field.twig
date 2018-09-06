@@ -11,26 +11,69 @@ This template is for display inside PL only and is meant to emulate drupal field
     'field--type-' ~ field_type|clean_class,
   ]
 %}
-
 {%
   set title_classes = [
     'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
+    'field__label--' ~ label_display,
   ]
 %}
 
 {# field type variations #}
 {% if field_type == "link" %}
+
   {# if link field #}
   {% if label_hidden %}
-    <div class="{{ classes|join(' ') }} field__item"><a href="{{field_content_url}}">{{field_content}}</a></div>
+    <div class="{{ classes|join(' ') }} field__item">
+      <a href="{{field_content_url}}">{{field_content}}</a>
+    </div>
   {% else %}
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
-      <div class="{{ classes|join(' ') }} field__item"><a href="{{field_content_url}}">{{field_content}}</a></div>
+      <div class="{{ classes|join(' ') }} field__item">
+        <a href="{{field_content_url}}">{{field_content}}</a>
+      </div>
+    </div>
+  {% endif %}
+{% elseif field_type == "image" %}
+
+  {# if image field #}
+  {% if label_hidden %}
+    <div class="{{ classes|join(' ') }} field__item"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
+  {% else %}
+    <div class="{{ classes|join(' ') }}">
+      <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
+      <div class="{{ classes|join(' ') }} field__item"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
+    </div>
+  {% endif %}
+{% elseif field_type == "entity-reference" %}
+
+  {# if entity-reference #}
+  {% if label_hidden %}
+    {% for item in items %}
+      <div class="{{ classes|join(' ') }} field__item">
+        {% if loop.last %}
+          <a href="{{ item.url }}">{{ item.content }}</a>
+        {% else %}
+          <a href="{{ item.url }}">{{ item.content }}</a>{{ separator }}&nbsp;
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="{{ classes|join(' ') }}">
+      <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
+      {% for item in items %}
+        <div class="{{ classes|join(' ') }} field__item">
+          {% if loop.last %}
+            <a href="{{ item.url }}">{{ item.content }}</a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.content }}</a>{{ separator }}&nbsp;
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
   {% endif %}
 {% else %}
+
   {# if other field types #}
   {% if label_hidden %}
     <div class="{{ classes|join(' ') }} field__item">{{field_content}}</div>

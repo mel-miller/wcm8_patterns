@@ -2,6 +2,24 @@
   "heading_level": 1,
 } %}
 
-{% include "@drupal/node/_node.twig" with {
+{% embed "@drupal/node/_node.twig"
+with {
   display_submitted: TRUE,
-} %}
+}%}
+  {% block node_content %}
+    {% if pl %}
+      {% include "@drupal/field/field-article-image/field-article-image.twig" with {
+        field_content: field_article_image,
+        field_name: "field-article-image",
+        field_type: "image"
+      } %}
+      {% include "@drupal/field/field-article-body/field-article-body.twig" with {
+        field_content: field_article_body,
+        field_name: "field-article-body",
+        field_type: "text-long"
+      } %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}
