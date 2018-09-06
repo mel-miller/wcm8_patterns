@@ -15,10 +15,6 @@ accordion:
 blockquote:
   js:
     dist/01-atoms/02-text/02-blockquote/blockquote.js: {}
-
-main-menu:
-  js:
-    dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
 
