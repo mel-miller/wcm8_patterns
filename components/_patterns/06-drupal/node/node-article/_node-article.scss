@@ -4,12 +4,20 @@
   font-weight: 600;
 }
 
-.node--article .field--name-field-article-image {
-  float: right;
-  margin: 0 0 1em 1em;
+.node--article {
+  .field--name-field-article-image {
+    float: right;
+    margin: 0 0 1em 1em;
 
-  img {
-    max-height: 16em;
-    //TODO rethink this once image styles are configured on the sites
+    img {
+      max-height: 18em;
+      //TODO rethink this once image styles are configured on the sites
+    }
+  }
+
+  .field--name-field-article-tags {
+    @include clearfix;
+
+    margin-top: 1em;
   }
 }

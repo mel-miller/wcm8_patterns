@@ -10,3 +10,14 @@ field_article_body:
   'Lorem ipsum dolor amet poke chartreuse heirloom literally pop-up. Forage put a bird on it pour-over, chambray vinyl woke vice adaptogen ennui umami plaid. Echo park live-edge gentrify cliche bicycle rights vape kickstarter enamel pin venmo. Hella dreamcatcher try-hard asymmetrical marfa synth crucifix whatever copper mug succulents tousled hashtag. Banjo 3 wolf moon chillwave, shoreditch vinyl beard post-ironic single-origin coffee humblebrag +1. Ennui raclette vape swag irony 3 wolf moon distillery banh mi butcher vaporware street art raw denim. Godard gastropub blue bottle readymade knausgaard asymmetrical. Hammock kitsch locavore polaroid sartorial pop-up. Fam blog seitan, taxidermy kombucha Lorem ipsum dolor amet poke chartreuse heirloom literally pop-up. Forage put a bird on it pour-over, chambray vinyl woke vice adaptogen ennui umami plaid. Echo park live-edge gentrify cliche bicycle rights vape kickstarter enamel pin venmo. Hella dreamcatcher try-hard asymmetrical marfa synth crucifix whatever copper mug succulents tousled hashtag. Banjo 3 wolf moon chillwave, shoreditch vinyl beard post-ironic single-origin coffee humblebrag +1. Ennui raclette vape swag irony 3 wolf moon distillery banh mi butcher vaporware street art raw denim. Godard gastropub blue bottle readymade knausgaard asymmetrical. Hammock kitsch locavore polaroid sartorial pop-up. Fam blog seitan, taxidermy kombucha. Lorem ipsum dolor amet poke chartreuse heirloom literally pop-up. Forage put a bird on it pour-over, chambray vinyl woke vice adaptogen ennui umami plaid. Echo park live-edge gentrify cliche bicycle rights vape kickstarter enamel pin venmo. Hella dreamcatcher try-hard asymmetrical marfa synth crucifix whatever copper mug succulents tousled hashtag. Banjo 3 wolf moon chillwave, shoreditch vinyl beard post-ironic single-origin coffee humblebrag +1. Ennui raclette vape swag irony 3 wolf moon distillery banh mi butcher vaporware street art raw denim. Godard gastropub blue bottle readymade knausgaard asymmetrical. Hammock kitsch locavore polaroid sartorial pop-up. Ennui raclette vape swag irony 3 wolf moon distillery banh mi butcher vaporware street art raw denim. Godard gastropub blue bottle readymade knausgaard asymmetrical. Hammock kitsch locavore polaroid sartorial pop-up. Fam blog seitan, taxidermy kombucha.'
 image_src: "http://i.chirkup.me/00/00/34/3436_728x.jpg"
 image_alt: "This is a dird."
+separator: ","
+items:
+  1:
+    url: "#"
+    content: "Dog"
+  2:
+    url: "#"
+    content: "Bird"
+  3:
+    url: "#"
+    content: "Dird"

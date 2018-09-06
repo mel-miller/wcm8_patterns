@@ -2,7 +2,7 @@
 This template is for display inside PL only and is meant to emulate drupal fields.
 #}
 
-<!-- TODO: why is clean_class not working in PL? -->
+{# TODO: why is clean_class not working in PL? #}
 
 {%
   set classes = [
@@ -20,37 +20,36 @@ This template is for display inside PL only and is meant to emulate drupal field
 
 {# field type variations #}
 {% if field_type == "link" %}
-
   {# if link field #}
   {% if label_hidden %}
-    <div class="{{ classes|join(' ') }} field__item">
+    <div class="{{ classes|join(' ') }}">
       <a href="{{field_content_url}}">{{field_content}}</a>
     </div>
   {% else %}
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
-      <div class="{{ classes|join(' ') }} field__item">
+      <div class="field__item">
         <a href="{{field_content_url}}">{{field_content}}</a>
       </div>
     </div>
   {% endif %}
-{% elseif field_type == "image" %}
 
+{% elseif field_type == "image" %}
   {# if image field #}
   {% if label_hidden %}
-    <div class="{{ classes|join(' ') }} field__item"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
+    <div class="{{ classes|join(' ') }}"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
   {% else %}
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
-      <div class="{{ classes|join(' ') }} field__item"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
+      <div class="field__item"><img src="{{ image_src }}" alt="{{ image_alt }}"></div>
     </div>
   {% endif %}
-{% elseif field_type == "entity-reference" %}
 
+{% elseif field_type == "entity-reference" %}
   {# if entity-reference #}
   {% if label_hidden %}
     {% for item in items %}
-      <div class="{{ classes|join(' ') }} field__item">
+      <div class="{{ classes|join(' ') }}">
         {% if loop.last %}
           <a href="{{ item.url }}">{{ item.content }}</a>
         {% else %}
@@ -62,7 +61,7 @@ This template is for display inside PL only and is meant to emulate drupal field
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
       {% for item in items %}
-        <div class="{{ classes|join(' ') }} field__item">
+        <div class="field__item">
           {% if loop.last %}
             <a href="{{ item.url }}">{{ item.content }}</a>
           {% else %}
@@ -76,11 +75,11 @@ This template is for display inside PL only and is meant to emulate drupal field
 
   {# if other field types #}
   {% if label_hidden %}
-    <div class="{{ classes|join(' ') }} field__item">{{field_content}}</div>
+    <div class="{{ classes|join(' ') }}">{{field_content}}</div>
   {% else %}
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
-      <div class="{{ classes|join(' ') }} field__item">{{field_content}}</div>
+      <div class="field__item">{{field_content}}</div>
     </div>
   {% endif %}
 {% endif %}
