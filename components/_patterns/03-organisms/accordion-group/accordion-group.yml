@@ -1,0 +1,18 @@
+accordion_heading_level: 3
+accordion_items:
+  1:
+    accordion_item_number: 1
+    accordion_term: "This is a frequently asked question?"
+    accordion_def: "with a short answer."
+  2:
+    accordion_item_number: 2
+    accordion_term: "This is also frequently asked question?"
+    accordion_def: "But it has a longer answer. Lorem ipsum dolor amet vaporware meggings farm-to-table, everyday carry pop-up 8-bit umami brunch blog authentic adaptogen bespoke. Beard cred PBR&B tbh vegan cray fingerstache hoodie try-hard waistcoat pinterest vexillologist. Roof party vexillologist gentrify raw denim hammock, subway tile kinfolk thundercats helvetica organic irony craft beer direct trade kogi blog. Sustainable meditation quinoa DIY polaroid pabst flexitarian activated charcoal vinyl shabby chic. Small batch roof party succulents, fingerstache photo booth palo santo copper mug."
+  3:
+    accordion_item_number: 3
+    accordion_term: "This is a term."
+    accordion_def: "This is the definition of that term."
+  4:
+    accordion_item_number: 4
+    accordion_term: "Here is another term."
+    accordion_def: "And it gets a definition too, which is this line."

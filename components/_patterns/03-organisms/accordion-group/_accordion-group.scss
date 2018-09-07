@@ -1,0 +1,77 @@
+.Accordion {
+  border-top: 1px solid $gray-light;
+}
+
+.Accordion-title {
+  display: block;
+  pointer-events: none;
+}
+
+.Accordion-icon {
+  border: solid $gray;
+  border-width: 0 2px 2px 0;
+  height: 0.5rem;
+  width: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  left: 1em;
+  top: 49%;
+  transform: translateY(-60%) rotate(45deg);
+}
+
+.Accordion-trigger {
+  background: none;
+  font-family: $proxima;
+  border: 0;
+  border-bottom: 1px solid $gray-light;
+  color: $gray;
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 1em 2.45em 0.9em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    color: $gray-darker;
+    background: $near-white;
+
+    & .Accordion-icon {
+      border-color: $gray-darker;
+    }
+  }
+
+  &:focus {
+    outline: 2px dotted $teal;
+    outline-offset: -1px;
+  }
+}
+
+.Accordion-trigger[aria-expanded="true"] {
+  border-bottom: 1px dotted $gray-light;
+  background: $near-white;
+
+  & .Accordion-title {
+    color: $gray-darker;
+  }
+
+  & .Accordion-icon {
+    transform: translateY(-50%) rotate(-135deg);
+    top: 52%;
+    border-color: $gray-darker;
+  }
+}
+
+.Accordion-panel {
+  margin: 0;
+  padding: 0.25em 2.75em;
+  border-bottom: 1px solid $gray-light;
+  color: $gray-darker;
+  font-size: 1rem;
+}
+
+.Accordion-panel[hidden] {
+  display: none;
+}

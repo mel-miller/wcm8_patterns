@@ -8,9 +8,9 @@ global:
     theme:
       dist/scripts.js: {}
 
-accordion:
+accordion-group:
   js:
-    dist/02-molecules/accordion-item/accordion-item.js: {}
+    dist/03-organisms/accordion-group/accordion-group.js: {}
 
 blockquote:
   js:
