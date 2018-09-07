@@ -1,0 +1,88 @@
+.tabs__link,
+.tabs__link--local-tasks {
+  background-color: $near-white;
+  color: $gray;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 1em 2.4em;
+  text-align: center;
+  text-decoration: none;
+
+  @include large {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.5em 1.2em 0.4em;
+    position: relative;
+    top: 1px;
+    width: auto;
+    margin-right: 4px;
+  }
+
+  &:hover {
+    background-color: $gray-lightest;
+    color: $gray-darker;
+  }
+
+  &.is-active {
+    background-color: $gray;
+    color: $white;
+
+    @include large {
+      background-color: $white;
+      color: $gray;
+      border: 1px solid $gray-lighter;
+      border-bottom: 1px solid white;
+      top: 0;
+
+      &::before {
+        position: absolute;
+        bottom: 100%;
+        right: -1px;
+        left: -1px;
+        border-top: 3px solid $gray;
+        content: '';
+      }
+    }
+  }
+}
+
+// Tab Navigation
+.tabs__nav {
+  @include list-reset;
+
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 2em;
+
+  @include large {
+    display: flex;
+  }
+}
+
+// Tab Content (hidden only in full #tabs js version)
+.tabs__tab {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.tabs__content {
+  padding: 0.5rem;
+  padding-top: 0;
+}
+
+// No-js fallback
+.tabs.no-js {
+  .tabs__tab.is-active {
+    display: block;
+  }
+}
+
+//pattern lab specific adjustments
+.pl-specific .tabs__link {
+  @include large {
+    top: 1px;
+  }
+}

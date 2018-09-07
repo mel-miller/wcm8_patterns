@@ -27,3 +27,7 @@ status:
 tab-group:
   js:
     dist/03-organisms/tab-group/tab-group.js: {}
+
+tab-menu:
+  js:
+    dist/03-organisms/tab-menu/tab-menu.js: {}
