@@ -24,6 +24,6 @@ status:
   js:
     dist/02-molecules/status/status.js: {}
 
-tabs:
+tab-group:
   js:
-    dist/02-molecules/menus/tabs/tabs.js: {}
+    dist/03-organisms/tab-group/tab-group.js: {}

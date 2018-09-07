@@ -1,0 +1,23 @@
+{{ attach_library('wcm8_patterns/tab-group') }}
+
+<div class="tab-group">
+
+  <div role="tablist" aria-label="{{ aria_label }}">
+    {% for tab_item in tab_items %}
+      <button role="tab" aria-selected="{{ tab_item.aria_selected }}" aria-controls="{{ tab_item.tab_tab }}-tab" id="{{ tab_item.tab_tab }}">
+        {{ tab_item.tab_tab }}
+      </button>
+    {% endfor %}
+  </div>
+
+  {% for tab_item in tab_items %}
+    {% if loop.first %}
+      <div tabindex="0" role="tabpanel" id="{{ tab_item.tab_tab }}-tab" aria-labelledby="{{ tab_item.tab_tab }}">
+    {% else %}
+      <div tabindex="0" role="tabpanel" id="{{ tab_item.tab_tab }}-tab" aria-labelledby="{{ tab_item.tab_tab }}" hidden="">
+    {% endif %}
+      {{ tab_item.tab_panel }}
+    </div>
+  {% endfor %}
+
+</div>

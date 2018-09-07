@@ -1,0 +1,14 @@
+aria_label: Fruit
+tab_items:
+  1:
+    aria_selected: "true"
+    tab_tab: "Apples"
+    tab_panel: "Text about apples."
+  2:
+    aria_selected: "false"
+    tab_tab: "Bananas"
+    tab_panel: "Stuff about bananas."
+  3:
+    aria_selected: "false"
+    tab_tab: "Pears"
+    tab_panel: "Stuff about pears."

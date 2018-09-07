@@ -1,0 +1,103 @@
+.tabs {
+  //empty
+}
+
+[role="tablist"] {
+  margin: 0 0 -0.1em;
+  overflow: visible;
+}
+
+[role="tab"] {
+  position: relative;
+  margin: 0;
+  padding: 0.7em 1.4em;
+  border: 1px solid transparent;
+  overflow: visible;
+  color: $gray;
+  font-family: $proxima;
+  font-size: 1rem;
+  font-weight: 400;
+  background: $near-white;
+}
+
+[role="tab"]:hover {
+  color: $gray-dark;
+  background: $gray-lightest;
+}
+
+[role="tab"]:hover,
+[role="tab"]:focus,
+[role="tab"]:active {
+  outline: 0;
+}
+
+[role="tab"][aria-selected="true"]::before {
+  position: absolute;
+  bottom: 100%;
+  right: -1px;
+  left: -1px;
+  border-top: 3px solid $gray;
+  content: '';
+}
+//active tab
+[role="tab"][aria-selected="true"] {
+  border: 1px solid $gray-lighter;
+  color: $gray-dark;
+  background: $white;
+}
+//active tab top border
+[role="tab"][aria-selected="true"]:not(:hover)::before {
+  border-top: 3px solid $gray;
+}
+//active tab top border hover
+[role="tab"][aria-selected="true"]:hover::before {
+  border-top: 3px solid $gray;
+}
+//inactive tab top border hover
+[role="tab"]:hover::before,
+[role="tab"]:focus::before {
+  border-color: $gray-light;
+}
+//gap filler -- make this match active tab background
+[role="tab"][aria-selected="true"]::after {
+  position: absolute;
+  z-index: 3;
+  bottom: -1px;
+  right: 0;
+  left: 0;
+  height: 0.3em;
+  background: $white;
+  content: '';
+}
+
+[role="tabpanel"] {
+  position: relative;
+  z-index: 2;
+  padding: 1.15em 1em 1em;
+  border: 1px solid $gray-lighter;
+  color: $gray-darker;
+  background: $white;
+  font-size: 1rem;
+}
+
+[role="tabpanel"]:focus {
+  border-color: $teal;
+  box-shadow: 0 0 0.1em $teal;
+  outline: 0;
+}
+
+[role="tabpanel"]:focus::after {
+  position: absolute;
+  bottom: 0;
+  right: -1px;
+  left: -1px;
+  content: '';
+}
+
+[role="tabpanel"] p {
+  margin: 0;
+}
+
+[role="tabpanel"] * + p {
+  margin-top: 1em;
+}
