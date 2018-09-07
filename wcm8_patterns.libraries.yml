@@ -15,8 +15,6 @@ accordion-group:
 blockquote:
   js:
     dist/01-atoms/02-text/02-blockquote/blockquote.js: {}
-  dependencies:
-    - core/drupal
 
 sprite:
   js:

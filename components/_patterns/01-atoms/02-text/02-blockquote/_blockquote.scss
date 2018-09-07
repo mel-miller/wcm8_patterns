@@ -1,7 +1,8 @@
 .blockquote {
   border-left: solid 3px $gray-lighter;
-  margin-left: 1em;
+  margin: 2em 0 2em 2em;
   padding-left: 1em;
+  padding-right: 3em;
 }
 
 blockquote:not(.pulled-quote) {
@@ -11,7 +12,8 @@ blockquote:not(.pulled-quote) {
 .pulled-quote {
   border: 0;
   padding: 2em;
-  margin: 2em 0 1em;
+  padding-right: 4em;
+  margin: 2em 0;
   position: relative;
 }
 
