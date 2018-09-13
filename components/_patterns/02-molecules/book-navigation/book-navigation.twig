@@ -1,0 +1,108 @@
+{#
+/**
+ * @file
+ * Default theme implementation to navigate books.
+ *
+ * Presented under nodes that are a part of book outlines.
+ *
+ * Available variables:
+ * - tree: The immediate children of the current node rendered as an unordered
+ *   list.
+ * - current_depth: Depth of the current node within the book outline. Provided
+ *   for context.
+ * - prev_url: URL to the previous node.
+ * - prev_title: Title of the previous node.
+ * - parent_url: URL to the parent node.
+ * - parent_title: Title of the parent node. Not printed by default. Provided
+ *   as an option.
+ * - next_url: URL to the next node.
+ * - next_title: Title of the next node.
+ * - has_links: Flags TRUE whenever the previous, parent or next data has a
+ *   value.
+ * - book_id: The book ID of the current outline being viewed. Same as the node
+ *   ID containing the entire outline. Provided for context.
+ * - book_url: The book/node URL of the current outline being viewed. Provided
+ *   as an option. Not used by default.
+ * - book_title: The book/node title of the current outline being viewed.
+ *
+ * @see template_preprocess_book_navigation()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if tree or has_links %}
+  <nav class="book-navigation" role="navigation" aria-labelledby="book-label-{{ book_id }}">
+    {{ tree }}
+    {% if has_links %}
+      <h2 class="visually-hidden">{{ 'Book traversal links for'|t }} {{ book_title }}</h2>
+      <ul class="book-pager">
+      {% if prev_url %}
+        <li>
+          <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
+            {% include "@atoms/04-images/icons/_icon.twig" with {
+              icon_name: 'arrow-left',
+            } %}
+            {{ prev_title }}
+          </a>
+        </li>
+      {% endif %}
+      {% if parent_url %}
+        <li>
+          <a href="{{ parent_url }}" title="{{ 'Go to parent page'|t }}"><span class="up-nav"><img src="{{ base_path ~ directory }}/images/icons/src/arrow-up.svg">Up</span></a>
+        </li>
+      {% endif %}
+      {% if next_url %}
+        <li>
+          <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">{{ next_title }} <i class="fas fa-angle-right fa-2x"></i></a>
+        </li>
+      {% endif %}
+    </ul>
+    {% endif %}
+  </nav>
+{% endif %}
+
+<!--
+<hr>
+
+
+<nav id="book-navigation-1" class="book-navigation" role="navigation" aria-labelledby="book-label-1">
+
+  <ul class="menu">
+    <li class="menu-item">
+      <a href="/node/4" hreflang="en">Grandchild Page 2a</a>
+    </li>
+    <li class="menu-item">
+      <a href="/node/5" hreflang="en">Grandchild Page 2b</a>
+    </li>
+  </ul>
+
+  <h2 class="visually-hidden" id="book-label-1">Book traversal links for Child Page 2</h2>
+  <ul class="book-pager">
+    <li class="book-pager__item book-pager__item--previous">
+      <a href="/node/2" rel="prev" title="Go to previous page">
+        <b>‹</b>
+        Child Page 1</a>
+    </li>
+    <li class="book-pager__item book-pager__item--center">
+      <a href="/node/1" title="Go to parent page">Up</a>
+    </li>
+    <li class="book-pager__item book-pager__item--next">
+      <a href="/node/4" rel="next" title="Go to next page">Grandchild Page 2a
+        <b>›</b>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="node__links">
+  <ul class="links inline">
+    <li class="book-add-child">
+      <a href="/node/add/book?parent=3">Add child page</a>
+    </li>
+    <li class="book-printer">
+      <a href="/book/export/html/3" title="Show a printer-friendly version of this book page and its sub-pages.">Printer-friendly version</a>
+    </li>
+  </ul>
+</div>
+
+</div> -->

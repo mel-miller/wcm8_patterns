@@ -1,0 +1,8 @@
+has_links: yes
+book_id: 1
+book_title: Sample Book
+parent_url: "#"
+prev_url: "#"
+prev_title: The Page Before
+next_url: "#"
+next_title: The Page After
