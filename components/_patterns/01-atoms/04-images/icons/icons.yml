@@ -2,3 +2,15 @@ items:
   1:
     name: "Bars"
     value: "bars"
+  2:
+    name: "Arrow Right"
+    value: "arrow-right"
+  3:
+    name: "Arrow Left"
+    value: "arrow-left"
+  4:
+    name: "Arrow Up"
+    value: "arrow-up"
+  5:
+    name: "Arrow Down"
+    value: "arrow-down"
