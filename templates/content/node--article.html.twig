@@ -71,8 +71,8 @@
  */
 #}
 
-{% include "@content/nodes/node-article/node-article.twig"  
-  with {   
+{% include "{% include "@drupal/node/node-article/node-article.twig" %}"
+  with {
     date: node.created.value|format_date('wcm8_date'),
   }
 %}
