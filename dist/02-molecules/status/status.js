@@ -1,0 +1,2 @@
+'use strict';Drupal.behaviors.status={attach:function attach(a){$(a).find('.status-box span.status').each(function(){$(this).hasClass('status--status')?$(this).prepend('<div class="icon"><i class="fas fa-info-circle"></i></div>'):$(this).hasClass('status--warning')?$(this).prepend('<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>'):$(this).hasClass('status--error')&&$(this).prepend('<div class="icon"><i class="fas fa-times-circle"></i></div>')})}};
+//# sourceMappingURL=status.js.map

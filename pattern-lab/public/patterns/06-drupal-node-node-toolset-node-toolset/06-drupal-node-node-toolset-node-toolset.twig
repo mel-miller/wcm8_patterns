@@ -1,0 +1,28 @@
+{% include "@atoms/02-text/00-headings/_heading.twig" with {
+  "heading_level": 1,
+} %}
+
+{% embed "@drupal/node/_node.twig" %}
+  {% block node_content %}
+    {% if pl %}
+      {% include "@drupal/fields/field-toolset-summary/field-toolset-summary.twig" with {
+        field_content: field_toolset_summary,
+        field_name: "field-toolset-summary",
+        field_type: "string"
+      } %}
+      {% include "@drupal/fields/field-toolset-description/field-toolset-description.twig" with {
+        field_content: field_toolset_description,
+        field_name: "field-toolset-description",
+        field_type: "text-long"
+      } %}
+      {% include "@drupal/fields/field-link-to-tool/field-link-to-tool.twig" with {
+        field_content: field_link_to_tool,
+        field_name: "field-link-to-tool",
+        field_type: "link",
+        field_content_url: '#'
+      } %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

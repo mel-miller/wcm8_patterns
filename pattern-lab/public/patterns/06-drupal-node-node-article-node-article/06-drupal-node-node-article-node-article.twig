@@ -1,0 +1,33 @@
+{% include "@atoms/02-text/00-headings/_heading.twig" with {
+  "heading_level": 1,
+} %}
+
+{% embed "@drupal/node/_node.twig"
+with {
+  display_submitted: TRUE,
+}%}
+  {% block node_content %}
+    {% if pl %}
+      {% include "@drupal/fields/field-article-image/field-article-image.twig" with {
+        field_content: field_article_image,
+        field_name: "field-article-image",
+        field_type: "image"
+      } %}
+      {% include "@drupal/fields/field-article-body/field-article-body.twig" with {
+        field_content: field_article_body,
+        field_name: "field-article-body",
+        field_type: "text-long"
+      } %}
+      {% include "@drupal/fields/field-article-tags/field-article-tags.twig" with {
+        field_content: field_article_tags,
+        field_name: "field-article-tags",
+        field_type: "entity-reference",
+        label: "Tags",
+        label_hidden: false,
+        label_display: "inline",
+      } %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

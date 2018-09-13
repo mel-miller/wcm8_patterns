@@ -1,0 +1,17 @@
+{% include "@atoms/02-text/00-headings/_heading.twig" with {
+  "heading_level": 1,
+} %}
+
+{% embed "@drupal/node/_node.twig" %}
+  {% block node_content %}
+    {% if pl %}
+      {% include "@drupal/fields/field-lt-description/field-lt-description.twig" with {
+        field_content: field_lt_description,
+        field_name: "field-lt-description",
+        field_type: "text-long"
+      } %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}
