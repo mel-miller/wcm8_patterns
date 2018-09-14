@@ -7,13 +7,36 @@
     border-bottom: 1px solid $gray-lighter;
     border-top: 1px solid $gray-lighter;
 
-    a {
+    .book-pager__item {
+      // background: aqua;
+    }
+
+    .book-pager__item--up {
+      text-align: center;
+    }
+
+    .book-pager__link {
       text-decoration: none;
     }
 
-    svg.icon {
-      height: 1.25em;
-      width: 1.25em;
+    .book-pager__icon {
+      width: 1em;
+      height: auto;
+    }
+
+    .book-pager__icon--prev {
+      float: left;
+      margin-right: 0.5em;
+    }
+
+    .book-pager__icon--up {
+      height: 1em;
+      width: auto;
+    }
+
+    .book-pager__icon--next {
+      float: right;
+      margin-left: 0.5em;
     }
   }
 }
