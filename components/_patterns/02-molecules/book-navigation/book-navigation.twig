@@ -49,7 +49,7 @@
       {% if prev_url %}
         <li class="book-pager__item book-pager__item--prev">
           <a href="{{ prev_url }}" class="book-pager__link book-pager__link--prev" rel="prev" aria-label="{{ 'Go to previous page'|t }}">
-            <i class="fas fa-caret-left book-pager__icon book-pager__icon--prev"></i>
+            <i class="fas fa-chevron-left book-pager__icon book-pager__icon--prev"></i>
             <span class="book-pager__text book-pager__text--prev">{{ prev_title }}</span>
           </a>
         </li>
@@ -58,7 +58,7 @@
       {% if parent_url %}
         <li class="book-pager__item book-pager__item--up">
           <a href="{{ parent_url }}" class="book-pager__link book-pager__link--up" aria-label="{{ 'Go to parent page'|t }}">
-            <i class="fas fa-caret-up book-pager__icon book-pager__icon--up"></i>
+            <i class="fas fa-chevron-up book-pager__icon book-pager__icon--up"></i>
           </a>
         </li>
       {% endif %}
@@ -67,7 +67,7 @@
         <li class="book-pager__item book-pager__item--next">
           <a href="{{ next_url }}" class="book-pager__link book-pager__link--next" rel="next" aria-label="{{ 'Go to next page'|t }}">
             <span class="book-pager__text book-pager__text--next">{{ next_title }}</span>
-            <i class="fas fa-caret-right book-pager__icon book-pager__icon--next"></i>
+            <i class="fas fa-chevron-right book-pager__icon book-pager__icon--next"></i>
           </a>
         </li>
       {% endif %}

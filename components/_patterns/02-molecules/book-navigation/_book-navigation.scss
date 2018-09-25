@@ -24,7 +24,7 @@
     @include clearfix;
 
     list-style: none;
-    padding: 0.25em 0;
+    padding: 0.5em 0;
     line-height: 1;
     border-bottom: 1px solid $gray-lighter;
     border-top: 1px solid $gray-lighter;
@@ -54,22 +54,26 @@
     }
 
     .book-pager__icon {
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
 
     .book-pager__icon--prev {
-      margin-right: 0.125em;
+      margin-right: 0.25em;
+    }
+
+    .book-pager__icon--up {
+      font-size: 1.3125em;
     }
 
     .book-pager__icon--next {
-      margin-left: 0.125em;
+      margin-left: 0.25em;
     }
 
     .book-pager__text {
       display: inline-block;
       position: relative;
-      top: -0.25em;
-      padding-top: 0.3125em;
+      top: -1px;
+      padding-top: 4px;
     }
   }
 }
