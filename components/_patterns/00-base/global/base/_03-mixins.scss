@@ -13,21 +13,37 @@
   }
 }
 
+/// Mixin - list-reset
+/// Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/// Mixin - With Icon
+/// Precede Text with SVG icon
+@mixin with-icon {
+  background-size: cover;
+  content: "";
+  display: inline-block;
+  margin-right: 0.1em;
+  padding: 0.8em;
+}
+
 /// Mixin - Wrapper
 /// Outer container mixin for large screens
-@mixin wrapper($container-max-width: $max-width, $outer-container-break: $small, $v-margin: 0, $v-padding: 0, $h-padding: $space, $h-padding-large: $h-padding) {
-  max-width: #{$container-max-width};
-  width: 100%;
-  margin: #{$v-margin} auto;
-  padding: #{$v-padding} #{$h-padding};
+/// applying per element or region to preserve full screen backgrounds
+@mixin wrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 3%;
+  max-width: calc(#{$max-width} - calc(#{$max-width} * 0.03));
 
-  @include breakpoint($outer-container-break) {
-    padding: #{$v-padding} #{$h-padding-large};
-  }
+  @include clearfix;
 
-  @include breakpoint($container-max-width) {
-    padding-left: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
-    padding-right: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
+  @include xl {
+    padding: 0;
   }
 }
 
