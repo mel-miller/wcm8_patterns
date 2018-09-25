@@ -1,7 +1,9 @@
-$breadcrumb-active: $gray-darker;
+$breadcrumb-active: $gray-darkest;
 
 .breadcrumb {
   @include list-reset;
+
+  margin-top: 1em;
 }
 
 .breadcrumb__item,
@@ -9,30 +11,30 @@ $breadcrumb-active: $gray-darker;
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $red;
+  color: $gray;
   text-decoration: none;
 }
 
 .breadcrumb__link:hover {
-  color: $teal;
+  text-decoration: underline;
 }
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 
   &::after {
-    content: ">";
-    color: $gray;
+    content: "|";
+    color: $red;
     font-weight: 700;
-    margin: 0 4px;
+    margin: 0 0.1625em;
   }
 
   &:last-child {
     color: $breadcrumb-active;
 
     &::after {
-      content: "";
+      content: none;
     }
   }
 }
