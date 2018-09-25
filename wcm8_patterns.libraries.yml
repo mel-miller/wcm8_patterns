@@ -1,12 +1,8 @@
 global:
   css:
-    base:
+    theme:
       //www.osu.edu/assets/fonts/webfonts.css: { external: true }
-    theme:
       dist/style.css: {}
-  js:
-    theme:
-      dist/scripts.js: {}
 
 accordion-group:
   js:
