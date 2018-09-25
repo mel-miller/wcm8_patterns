@@ -1,2 +1,2 @@
-'use strict';Drupal.behaviors.blockquote={attach:function attach(a){$(a).find('blockquote').each(function(){$(this).hasClass('pulled-quote')&&($('.pulled-quote p').wrap('<div class="pulled-quote__text"></div>'),$('.pulled-quote__text').before('<div class="pulled-quote__icon"><i class="fas fa-quote-left fa-3x"></i></div>'))})}};
+'use strict';(function(a,b){b.behaviors.blockquote={attach:function attach(b){'use strict';a(b).find('blockquote').each(function(){a(this).hasClass('pulled-quote')&&(a('.pulled-quote p').wrap('<div class="pulled-quote__text"></div>'),a('.pulled-quote__text').before('<div class="pulled-quote__icon"><i class="fas fa-quote-left fa-3x"></i></div>'))})}}})(jQuery,Drupal);
 //# sourceMappingURL=blockquote.js.map

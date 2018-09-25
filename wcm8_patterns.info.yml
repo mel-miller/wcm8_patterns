@@ -7,6 +7,7 @@ core: 8.x
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
   - 'wcm8_patterns/global'
+  - 'wcm8_patterns/blockquote'
   # - 'wcm8_patterns/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.

@@ -7,10 +7,15 @@ global:
 accordion-group:
   js:
     dist/03-organisms/accordion-group/accordion-group.js: {}
+  dependencies:
+    - core/drupal
 
 blockquote:
   js:
     dist/01-atoms/02-text/02-blockquote/blockquote.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
 
 sprite:
   js:
@@ -19,11 +24,18 @@ sprite:
 status:
   js:
     dist/02-molecules/status/status.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
 
 tab-group:
   js:
     dist/03-organisms/tab-group/tab-group.js: {}
+  dependencies:
+    - core/drupal
 
 tab-menu:
   js:
     dist/03-organisms/tab-menu/tab-menu.js: {}
+  dependencies:
+    - core/drupal
