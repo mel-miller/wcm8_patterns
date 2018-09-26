@@ -37,8 +37,8 @@
 @mixin wrapper {
   margin-left: auto !important;
   margin-right: auto !important;
-  padding: 0 3%;
-  max-width: calc(#{$max-width} - calc(#{$max-width} * 0.03));
+  padding: 0 6%;
+  max-width: calc(#{$max-width} - calc(#{$max-width} * 0.06));
 
   @include clearfix;
 
