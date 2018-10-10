@@ -21,6 +21,13 @@ sprite:
   js:
     components/js/svgxuse.min.js: { attributes: { defer: true } }
 
+social_media_links:
+  js:
+    dist/02-molecules/social-media-links/social-media-links.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 status:
   js:
     dist/02-molecules/status/status.js: {}
