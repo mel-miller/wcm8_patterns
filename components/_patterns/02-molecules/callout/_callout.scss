@@ -1,15 +1,14 @@
 @mixin callout($color: $gray) {
   border: 1px solid $color;
+  border-radius: 6px;
   margin: 2em 0;
-  padding: 0.25em 1em 0.25em 6em;
+  padding: 1.25em 1em 0.25em 5.5em;
   position: relative;
 
   .icon {
     float: left;
-    margin-right: 1.25em;
-    margin-top: 0.75em;
     position: absolute;
-    top: 0.75em;
+    top: 1.375em;
     left: 1.25em;
   }
 
@@ -20,5 +19,9 @@
 }
 
 .callout--caution {
-  @include callout($red);
+  @include callout($orange);
+}
+
+.callout--ux-tip {
+  @include callout($teal);
 }
