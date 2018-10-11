@@ -1,0 +1,2 @@
+'use strict';(function(a,b){b.behaviors.callout={attach:function attach(b){'use strict';a(b).find('.callout').each(function(){a(this).hasClass('callout--caution')?a(this).prepend('<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>'):a(this).hasClass('callout--ux-tip')&&a(this).prepend('<div class="icon"><i class="fas fa-times-circle"></i></div>')})}}})(jQuery,Drupal);
+//# sourceMappingURL=callout.js.map

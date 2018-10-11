@@ -1,0 +1,24 @@
+@mixin callout($color: $gray) {
+  border: 1px solid $color;
+  margin: 2em 0;
+  padding: 0.25em 1em 0.25em 6em;
+  position: relative;
+
+  .icon {
+    float: left;
+    margin-right: 1.25em;
+    margin-top: 0.75em;
+    position: absolute;
+    top: 0.75em;
+    left: 1.25em;
+  }
+
+  .svg-inline--fa {
+    font-size: 2.5rem;
+    color: $color;
+  }
+}
+
+.callout--caution {
+  @include callout($red);
+}
