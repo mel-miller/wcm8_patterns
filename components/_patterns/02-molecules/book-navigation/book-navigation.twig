@@ -34,15 +34,6 @@
 {% if has_links %}
   <nav class="book-navigation" role="navigation" aria-labelledby="book-label-{{ book_id }}">
 
-    {% if tree %}
-    <div class="book-navigation__tree">
-      <h2 class="visually-hidden">{{ 'Child page links'|t }}</h2>
-      {{ tree }}
-    </div>
-    {% elseif pl %}
-      {% include "@molecules/book-navigation/_book-tree-sample.twig" %}
-    {% endif %}
-
     {% if has_links %}
       <h2 class="visually-hidden">{{ 'Book traversal links for'|t }} {{ book_title }}</h2>
       <ul class="book-pager">
