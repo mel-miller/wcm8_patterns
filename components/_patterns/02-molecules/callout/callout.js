@@ -6,8 +6,8 @@
       'use strict';
 
       $(context).find('.callout').each(function() {
-        var caution = '<div class="icon"><i class="fas fa-exclamation-circle"></i></div>';
-        var ux_tip = '<div class="icon"><i class="fas fa-asterisk"></i></div>';
+        var caution = '<div class="icon"><span class="visually-hidden">Caution</span><i class="fas fa-exclamation"></i></div>';
+        var ux_tip = '<div class="icon"><span class="visually-hidden">UX Tip</span><i class="fas fa-asterisk"></i></div>';
 
         if ($(this).hasClass('callout--caution')) {
           $(this).prepend(caution);
