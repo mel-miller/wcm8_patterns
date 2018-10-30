@@ -31,3 +31,9 @@
 .callout--ux-tip {
   @include callout($violet);
 }
+
+.callout {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
