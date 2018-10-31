@@ -1,0 +1,47 @@
+.book-blocks-toc {
+  background: $gray-lightest;
+  padding: 1.5em;
+  border-radius: 8px;
+
+  a {
+    @include link;
+
+    color: $gray-darkest;
+    text-decoration: none;
+  }
+
+  h2.block__title {
+    margin-top: 0;
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+
+  ul {
+    padding-left: 1.125em;
+    margin: 0;
+    margin-left: 0.25em;
+    border-left: 0.25em solid $gray-lighter;
+  }
+
+  li.menu__item {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1em;
+    line-height: 1.25;
+    font-weight: 400;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li.menu__item--active-trail {
+    border-left: 0.25em solid $red;
+    margin-left: -1.3125em;
+    padding-left: 1.125em;
+
+    a {
+      color: $red;
+    }
+  }
+}

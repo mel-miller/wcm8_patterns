@@ -17,6 +17,13 @@ blockquote:
     - core/drupal
     - core/jquery
 
+book-toc:
+  js:
+    dist/02-molecules/book-toc/book-toc.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 callout:
   js:
     dist/02-molecules/callout/callout.js: {}
