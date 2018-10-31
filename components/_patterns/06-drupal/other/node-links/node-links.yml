@@ -1,9 +1,5 @@
 links:
   1:
     text: "Add Child Page"
-    href: "#"
   2:
     text: "Printer-firendly Version"
-heading:
-  text: "test"
-  level: "h3"
