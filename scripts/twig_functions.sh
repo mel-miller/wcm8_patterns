@@ -26,7 +26,9 @@ then
   twig_functions=(
     "drupal-pattern-lab/add-attributes-twig-extension/add_attributes.function.php"
     "drupal-pattern-lab/bem-twig-extension/bem.function.php"
-    "drupal-pattern-lab/attach-library-twig-extension/pl_attach-library.function.php"
+    # Commenting out for now since I have a copy of this in the functions folder already
+    # Also there is an issue to fix it: https://github.com/fourkitchens/emulsify/issues/254
+    #"drupal-pattern-lab/attach-library-twig-extension/pl_attach-library.function.php"
   )
 
   # Create symlinks for all contrib twig functions
