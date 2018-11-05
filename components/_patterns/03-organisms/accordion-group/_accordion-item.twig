@@ -5,7 +5,11 @@
   </button>
 </dt>
 <dd id="sect{{ accordion_item_number }}" role="region" aria-labelledby="accordion{{ accordion_item_number }}id" class="Accordion-panel" hidden>
-  <div>
-    <p>{{ accordion_def }}</p>
-  </div>
+  {% if pl %}
+    <div class="long-text">
+      <p>{{ accordion_def }}</p>
+    </div>
+  {% else %}
+    {{ accordion_def }}
+  {% endif %}
 </dd>
