@@ -9,6 +9,10 @@ picture {
   @include img;
 }
 
+img {
+  border: 1px solid $gray;
+}
+
 figure {
   margin: 0; //override normalize
 }
