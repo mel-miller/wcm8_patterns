@@ -1,8 +1,0 @@
-{% for item in items %}
-  <dt role="heading" aria-level="{{ accordion_heading_level }}">
-    <button aria-controls="sect{{ accordion_item_number }}" aria-expanded="false" class="Accordion-trigger" id="accordion{{ accordion_item_number }}id" type="button">
-      <span class="Accordion-title">{{ item.content }}</span>
-      <span class="Accordion-icon"></span>
-    </button>
-  </dt>
-{% endfor %}
