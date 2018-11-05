@@ -36,12 +36,15 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-  "paragraph",
-  "paragraph--" ~ paragraph.bundle|clean_class
-]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {{ content }}
+<div class="paragraph paragraph--text-with-image">
+  {% block paragraph_content %}
+    <div class="image-position--{{ image_position }} image-size--{{ image_size }}">
+      {% if pl %}
+        {% include "@atoms/04-images/00-image/responsive-image.twig" %}
+      {% else %}
+        {{ image }}
+      {% endif %}
+    </div>
+    {{ text_body }}
+  {% endblock %}
 </div>

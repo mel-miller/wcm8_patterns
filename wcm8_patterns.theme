@@ -164,4 +164,10 @@
     $variables['parent_paragraph_id'] = $parent->id();
     $variables['accordion_heading_level'] = $parent->get('field_heading_level')->value;
    }
+
+   //prepare variables for text_with_image paragraph type
+   if ($paragraphType == 'text_with_image') {
+     $variables['image_position'] = $paragraph->get('field_image_position')->value;
+     $variables['image_size'] = $paragraph->get('field_image_size')->value;
+   }
  }

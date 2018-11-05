@@ -36,12 +36,8 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-  "paragraph",
-  "paragraph--" ~ paragraph.bundle|clean_class
-]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {{ content }}
-</div>
+
+{% include "@drupal/paragraphs/text-with-image/text-with-image.twig" with {
+  "text_body": content.field_text_body,
+  "image": content.field_image_text_with_image,
+} %}
