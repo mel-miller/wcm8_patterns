@@ -36,12 +36,7 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-  "paragraph",
-  "paragraph--" ~ paragraph.bundle|clean_class
-]
-%}
-<div{{ attributes.addClass(classes) }}>
+
+<div class="paragraph-entity paragraph-entity--{{paragraph_type}}">
   {{ content }}
 </div>
