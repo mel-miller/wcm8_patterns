@@ -14,6 +14,13 @@
         } else if ($(this).hasClass('callout--ux-tip')) {
           $(this).prepend(ux_tip);
         }
+
+        //add an additional class if the callout is only one line
+        var height = $(this).innerHeight();
+        if (height < 51) {
+          $(this).addClass('short');
+        }
+
       });
 
     }
