@@ -38,5 +38,7 @@
 #}
 
 <div class="paragraph-entity paragraph-entity--{{ paragraph_type }}">
-  {{ content }}
+  {% include "@molecules/callout/_callout.twig" with {
+    "content": content.field_callout_body
+  } %}
 </div>

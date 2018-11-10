@@ -149,25 +149,30 @@
   * Implements hook_preprocess_paragraph().
   */
  function wcm8_patterns_preprocess_paragraph(array &$variables, $hook) {
-   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-   $paragraph = $variables['paragraph'];
-   $paragraphType = $paragraph->bundle();
-   $paragraphId = $paragraph->id();
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $paragraphType = $paragraph->bundle();
+  $paragraphId = $paragraph->id();
 
-   //provide paragraph variables to be used as necessary
-   $variables['paragraph_type'] = $paragraphType;
-   $variables['paragraph_id'] = $paragraphId;
+  //provide vars to be used as necessary
+  $variables['paragraph_type'] = $paragraphType;
+  $variables['paragraph_id'] = $paragraphId;
 
-   //get value of header level from accordion-group and use it in accordion-item
-   if ($paragraphType == 'accordion_item') {
+  //get value of header level from accordion-group and use it in accordion-item
+  if ($paragraphType == 'accordion_item') {
     $parent = $paragraph->getParentEntity();
     $variables['parent_paragraph_id'] = $parent->id();
     $variables['accordion_heading_level'] = $parent->get('field_heading_level')->value;
-   }
+  }
 
-   //prepare variables for text_with_image paragraph type
-   if ($paragraphType == 'text_with_image') {
-     $variables['image_position'] = $paragraph->get('field_image_position')->value;
-     $variables['image_size'] = $paragraph->get('field_image_size')->value;
-   }
- }
+  //provide vars for text_with_image paragraph type
+  if ($paragraphType == 'text_with_image') {
+    $variables['image_position'] = $paragraph->get('field_image_position')->value;
+    $variables['image_size'] = $paragraph->get('field_image_size')->value;
+  }
+
+  //provide vars for callout paragraphs
+  if ($paragraphType == 'callout') {
+    $variables['callout_type'] = str_replace("_", "-", $paragraph->get('field_callout_type')->value);
+  }
+}
