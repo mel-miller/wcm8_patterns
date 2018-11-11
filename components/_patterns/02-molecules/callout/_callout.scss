@@ -1,31 +1,32 @@
 @mixin callout($color: $gray) {
   border: 1px solid $color;
-  border-radius: 6px;
-  margin: 30px 60px 30px 16px;
-  padding: 14px 16px 14px 4.5em;
-  min-height: 50px;
-  position: relative;
+  border-radius: 5px;
+  margin: 2em 0.625em;
+  display: flex;
+  align-items: stretch;
 
-  .icon {
+  .callout-icon {
     float: left;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
     background: $color;
     color: white;
     text-align: center;
-    border-radius: 4px 0 6px;
-  }
-
-  &.short .icon {
-    border-radius: 4px 0 0 4px;
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    align-items: center;
   }
 
   .svg-inline--fa {
-    font-size: 24px;
-    margin-top: 13px;
+    font-size: 1.5em;
+    margin: 0 0.5em;
+
+    &.fa-exclamation {
+      font-size: 1.625em;
+      margin: 0 0.6875em;
+    }
+  }
+
+  .callout-body {
+    margin: 1em 1.25em 1em 1.5em;
   }
 }
 
@@ -41,4 +42,10 @@
   p:last-child {
     margin-bottom: 0;
   }
+}
+
+// inline callouts
+p.callout {
+  min-height: 0;
+  margin: 15px 5px;
 }

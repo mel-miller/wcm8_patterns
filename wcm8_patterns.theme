@@ -173,6 +173,12 @@
 
   //provide vars for callout paragraphs
   if ($paragraphType == 'callout') {
-    $variables['callout_type'] = str_replace("_", "-", $paragraph->get('field_callout_type')->value);
+    $calloutType = $paragraph->get('field_callout_type')->value;
+    $variables['callout_type'] = str_replace("_", "-", $calloutType);
+    if ($calloutType == 'caution') {
+      $variables['callout_icon'] = 'fa-exclamation';
+    } else if ($calloutType == 'ux_tip') {
+      $variables['callout_icon'] = 'fa-asterisk';
+    }
   }
 }

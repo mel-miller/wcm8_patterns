@@ -8,6 +8,27 @@
 
 {{ attach_library('wcm8_patterns/callout') }}
 
-<div class="callout callout--{{ callout_type }}">
-  {{ content }}
-</div>
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="callout callout--{{ callout_type }}">
+        <div class="callout-icon">
+          <span class="visually-hidden">UX Tip</span><i class="fas {{ callout_icon }}"></i>
+        </div>
+        <div class="callout-body">
+          {{ content }}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
