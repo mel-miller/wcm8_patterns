@@ -176,10 +176,13 @@ Follow existing organizational and naming conventions.
 
 ## Deployment
 
-Use Gitflow -- more info TBD
+### Use Gitflow -- more info TBD
 
-Drupal Theme -- Will eventually be deployed separately, more info TBD
+### Deploy Pattern Lab to Github
+1. Add `gh` remote upstream if it doesn't already exist: `git remote add gh https://github.com/mel-miller/wcm8_patterns.git`
+2. Run `gulp pl-deploy`
 
+<br/>
 
 ## Theme Organization
 
