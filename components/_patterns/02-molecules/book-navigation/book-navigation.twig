@@ -46,14 +46,6 @@
         </li>
       {% endif %}
 
-      {% if parent_url %}
-        <li class="book-pager__item book-pager__item--up">
-          <a href="{{ parent_url }}" class="book-pager__link book-pager__link--up" aria-label="{{ 'Go to instructional guide home'|t }}" title="{{ 'Go to instructional guide home'|t }}">
-            <i class="fas fa-chevron-up book-pager__icon book-pager__icon--up"></i>
-          </a>
-        </li>
-      {% endif %}
-
       {% if next_url %}
         <li class="book-pager__item book-pager__item--next">
           <a href="{{ next_url }}" class="book-pager__link book-pager__link--next" rel="next" aria-label="{{ 'Go to next page'|t }}">
