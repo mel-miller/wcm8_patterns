@@ -6,6 +6,8 @@
  */
 #}
 
+{{ attach_library('wcm8_patterns/social_media_links') }}
+
 {% set social_links = [
   { 'name':'Twitter', 'url': twitter, 'icon': 'twitter', 'prefix': 'fab' },
   { 'name':'Facebook', 'url': facebook, 'icon': 'facebook-f', 'prefix': 'fab' },
@@ -18,19 +20,16 @@
 
 <div id="social-media-block" class="social-media">
   <ul {{ bem('list', '' ,'social-media') }} >
-
     {% for social_link in social_links %}
-
       {% if social_link.url|length %}
 
-        <li class="social-media__item social-media__item--{{ social_link.name }}" >
+        <li class="social-media__item social-media__item--{{ social_link.name }} social-media__item--{{ loop.index }}" >
           <a href="{{ social_link.url }}" title="{{ social_link.name }} profile link for {{ site_name }}">
             <i class="{{ social_link.prefix }} fa-fw fa-lg fa-{{ social_link.icon }}"></i>
           </a>
         </li>
 
       {% endif %}
-
     {% endfor %}
   </ul>
 </div>

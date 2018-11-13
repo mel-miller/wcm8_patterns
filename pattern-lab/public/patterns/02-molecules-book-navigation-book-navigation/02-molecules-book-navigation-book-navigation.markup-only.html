@@ -1,68 +1,27 @@
 
   <nav class="book-navigation" role="navigation" aria-labelledby="book-label-1">
-    
+
           <h2 class="visually-hidden">Book traversal links for Sample Book</h2>
       <ul class="book-pager">
-              <li>
-          <a href="#" rel="prev" title="Go to previous page">
-            <script src="/components/js/svgxuse.min.js"></script>
-
-<svg class="icon">
-  <use xlink:href="../../../../dist/img/sprite/sprite.svg#arrow-left"></use>
-</svg>
-            The Page Before
+              <li class="book-pager__item book-pager__item--prev">
+          <a href="#" class="book-pager__link book-pager__link--prev" rel="prev" aria-label="Go to previous page">
+            <i class="fas fa-chevron-left book-pager__icon book-pager__icon--prev"></i>
+            <span class="book-pager__text book-pager__text--prev">The Page Before</span>
           </a>
         </li>
-                    <li>
-          <a href="#" title="Go to parent page"><span class="up-nav"><img src="/images/icons/src/arrow-up.svg">Up</span></a>
+      
+              <li class="book-pager__item book-pager__item--up">
+          <a href="#" class="book-pager__link book-pager__link--up" aria-label="Go to instructional guide home" title="Go to instructional guide home">
+            <i class="fas fa-chevron-up book-pager__icon book-pager__icon--up"></i>
+          </a>
         </li>
-                    <li>
-          <a href="#" rel="next" title="Go to next page">The Page After <i class="fas fa-angle-right fa-2x"></i></a>
+      
+              <li class="book-pager__item book-pager__item--next">
+          <a href="#" class="book-pager__link book-pager__link--next" rel="next" aria-label="Go to next page">
+            <span class="book-pager__text book-pager__text--next">The Page After</span>
+            <i class="fas fa-chevron-right book-pager__icon book-pager__icon--next"></i>
+          </a>
         </li>
-          </ul>
+      
+    </ul>
       </nav>
-
-<!--
-<hr>
-
-
-<nav id="book-navigation-1" class="book-navigation" role="navigation" aria-labelledby="book-label-1">
-
-  <ul class="menu">
-    <li class="menu-item">
-      <a href="/node/4" hreflang="en">Grandchild Page 2a</a>
-    </li>
-    <li class="menu-item">
-      <a href="/node/5" hreflang="en">Grandchild Page 2b</a>
-    </li>
-  </ul>
-
-  <h2 class="visually-hidden" id="book-label-1">Book traversal links for Child Page 2</h2>
-  <ul class="book-pager">
-    <li class="book-pager__item book-pager__item--previous">
-      <a href="/node/2" rel="prev" title="Go to previous page">
-        <b>‹</b>
-        Child Page 1</a>
-    </li>
-    <li class="book-pager__item book-pager__item--center">
-      <a href="/node/1" title="Go to parent page">Up</a>
-    </li>
-    <li class="book-pager__item book-pager__item--next">
-      <a href="/node/4" rel="next" title="Go to next page">Grandchild Page 2a
-        <b>›</b>
-      </a>
-    </li>
-  </ul>
-</nav>
-<div class="node__links">
-  <ul class="links inline">
-    <li class="book-add-child">
-      <a href="/node/add/book?parent=3">Add child page</a>
-    </li>
-    <li class="book-printer">
-      <a href="/book/export/html/3" title="Show a printer-friendly version of this book page and its sub-pages.">Printer-friendly version</a>
-    </li>
-  </ul>
-</div>
-
-</div> -->

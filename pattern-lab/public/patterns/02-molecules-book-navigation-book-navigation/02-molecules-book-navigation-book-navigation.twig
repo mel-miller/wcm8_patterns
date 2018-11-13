@@ -31,78 +31,39 @@
  */
 #}
 
-{% if tree or has_links %}
+{% if has_links %}
   <nav class="book-navigation" role="navigation" aria-labelledby="book-label-{{ book_id }}">
-    {{ tree }}
+
     {% if has_links %}
       <h2 class="visually-hidden">{{ 'Book traversal links for'|t }} {{ book_title }}</h2>
       <ul class="book-pager">
       {% if prev_url %}
-        <li>
-          <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
-            {% include "@atoms/04-images/icons/_icon.twig" with {
-              icon_name: 'arrow-left',
-            } %}
-            {{ prev_title }}
+        <li class="book-pager__item book-pager__item--prev">
+          <a href="{{ prev_url }}" class="book-pager__link book-pager__link--prev" rel="prev" aria-label="{{ 'Go to previous page'|t }}">
+            <i class="fas fa-chevron-left book-pager__icon book-pager__icon--prev"></i>
+            <span class="book-pager__text book-pager__text--prev">{{ prev_title }}</span>
           </a>
         </li>
       {% endif %}
+
       {% if parent_url %}
-        <li>
-          <a href="{{ parent_url }}" title="{{ 'Go to parent page'|t }}"><span class="up-nav"><img src="{{ base_path ~ directory }}/images/icons/src/arrow-up.svg">Up</span></a>
+        <li class="book-pager__item book-pager__item--up">
+          <a href="{{ parent_url }}" class="book-pager__link book-pager__link--up" aria-label="{{ 'Go to instructional guide home'|t }}" title="{{ 'Go to instructional guide home'|t }}">
+            <i class="fas fa-chevron-up book-pager__icon book-pager__icon--up"></i>
+          </a>
         </li>
       {% endif %}
+
       {% if next_url %}
-        <li>
-          <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">{{ next_title }} <i class="fas fa-angle-right fa-2x"></i></a>
+        <li class="book-pager__item book-pager__item--next">
+          <a href="{{ next_url }}" class="book-pager__link book-pager__link--next" rel="next" aria-label="{{ 'Go to next page'|t }}">
+            <span class="book-pager__text book-pager__text--next">{{ next_title }}</span>
+            <i class="fas fa-chevron-right book-pager__icon book-pager__icon--next"></i>
+          </a>
         </li>
       {% endif %}
+
     </ul>
     {% endif %}
   </nav>
 {% endif %}
-
-<!--
-<hr>
-
-
-<nav id="book-navigation-1" class="book-navigation" role="navigation" aria-labelledby="book-label-1">
-
-  <ul class="menu">
-    <li class="menu-item">
-      <a href="/node/4" hreflang="en">Grandchild Page 2a</a>
-    </li>
-    <li class="menu-item">
-      <a href="/node/5" hreflang="en">Grandchild Page 2b</a>
-    </li>
-  </ul>
-
-  <h2 class="visually-hidden" id="book-label-1">Book traversal links for Child Page 2</h2>
-  <ul class="book-pager">
-    <li class="book-pager__item book-pager__item--previous">
-      <a href="/node/2" rel="prev" title="Go to previous page">
-        <b>‹</b>
-        Child Page 1</a>
-    </li>
-    <li class="book-pager__item book-pager__item--center">
-      <a href="/node/1" title="Go to parent page">Up</a>
-    </li>
-    <li class="book-pager__item book-pager__item--next">
-      <a href="/node/4" rel="next" title="Go to next page">Grandchild Page 2a
-        <b>›</b>
-      </a>
-    </li>
-  </ul>
-</nav>
-<div class="node__links">
-  <ul class="links inline">
-    <li class="book-add-child">
-      <a href="/node/add/book?parent=3">Add child page</a>
-    </li>
-    <li class="book-printer">
-      <a href="/book/export/html/3" title="Show a printer-friendly version of this book page and its sub-pages.">Printer-friendly version</a>
-    </li>
-  </ul>
-</div>
-
-</div> -->
