@@ -22,7 +22,7 @@
   <h3>{{ title }}</h3>
 {% endif %}
 
-<dl id="accordionGroup" role="presentation" class="Accordion" data-allow-multiple>
+<dl id="accordionGroup" role="presentation" class="accordion" data-allow-multiple>
   {% for row in rows %}
     {% include "@organisms/accordion-group/_accordion-item.twig" with {
       "accordion_item_number": row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ counter }}'],

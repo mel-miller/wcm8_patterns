@@ -1,46 +1,39 @@
-.Accordion {
-  border-top: 1px solid $gray-light;
-}
-
-.Accordion-title {
+.accordion-title {
   display: block;
   pointer-events: none;
 }
 
-.Accordion-icon {
-  border: solid $gray;
-  border-width: 0 2px 2px 0;
-  height: 0.5rem;
-  width: 0.5rem;
-  pointer-events: none;
+.accordion-icon {
   position: absolute;
   left: 1em;
-  top: 49%;
-  transform: translateY(-60%) rotate(45deg);
+  top: 35%;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 8px solid $gray-dark;
+  transform: rotate(0deg);
+  transition-duration: 0.2s;
+  pointer-events: none;
 }
 
-.Accordion-trigger {
-  background: none;
+.accordion-trigger {
+  background: $gray-lightest;
   font-family: $proxima;
   border: 0;
-  border-bottom: 1px solid $gray-light;
-  color: $gray;
+  color: $gray-dark;
   display: block;
-  font-size: 1.05rem;
+  font-size: 1.1em;
   font-weight: 400;
   margin: 0;
-  padding: 1em 2.45em 0.9em;
+  margin-bottom: 0.25em;
+  padding: 1em 2.75em 0.9em;
   position: relative;
   text-align: left;
   width: 100%;
 
   &:hover {
-    color: $gray-darker;
-    background: $near-white;
-
-    & .Accordion-icon {
-      border-color: $gray-darker;
-    }
+    background: $gray-lighter;
   }
 
   &:focus {
@@ -49,29 +42,33 @@
   }
 }
 
-.Accordion-trigger[aria-expanded="true"] {
-  border-bottom: 1px dotted $gray-light;
-  background: $near-white;
+.accordion-trigger[aria-expanded="true"] {
+  background: $gray-lightest;
 
-  & .Accordion-title {
+  & .accordion-title {
     color: $gray-darker;
   }
 
-  & .Accordion-icon {
-    transform: translateY(-50%) rotate(-135deg);
-    top: 52%;
-    border-color: $gray-darker;
+  & .accordion-icon {
+    transform: rotate(90deg);
+    transition-duration: 0.05s;
   }
 }
 
-.Accordion-panel {
+.accordion-panel {
   margin: 0;
-  padding: 1.25em 2.75em 0.25em;
-  border-bottom: 1px solid $gray-light;
+  margin-bottom: 0.25em;
+  margin-top: -0.35em;
+  border: 1px solid $gray-lightest;
   color: $gray-darker;
-  font-size: 1rem;
+  font-size: 1em;
+  height: auto;
 }
 
-.Accordion-panel[hidden] {
+.accordion-panel--inner {
+  padding: 1.25em 3em 0.25em;
+}
+
+.accordion-panel[hidden] {
   display: none;
 }

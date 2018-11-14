@@ -1,15 +1,17 @@
 <dt role="heading" aria-level="{{ accordion_heading_level }}">
-  <button aria-controls="sect{{ accordion_item_number }}" aria-expanded="false" class="Accordion-trigger" id="accordion{{ accordion_item_number }}id" type="button">
-    <span class="Accordion-title">{{ accordion_term }}</span>
-    <span class="Accordion-icon"></span>
+  <button aria-controls="sect{{ accordion_item_number }}" aria-expanded="false" class="accordion-trigger" id="accordion{{ accordion_item_number }}id" type="button">
+    <span class="accordion-title">{{ accordion_term }}</span>
+    <span class="accordion-icon"></span>
   </button>
 </dt>
-<dd id="sect{{ accordion_item_number }}" role="region" aria-labelledby="accordion{{ accordion_item_number }}id" class="Accordion-panel" hidden>
-  {% if pl %}
-    <div class="long-text">
-      <p>{{ accordion_def }}</p>
-    </div>
-  {% else %}
-    {{ accordion_def }}
-  {% endif %}
+<dd id="sect{{ accordion_item_number }}" role="region" aria-labelledby="accordion{{ accordion_item_number }}id" class="accordion-panel" hidden>
+  <div class="accordion-panel--inner">
+    {% if pl %}
+      <div class="long-text">
+        <p>{{ accordion_def }}</p>
+      </div>
+    {% else %}
+      {{ accordion_def }}
+    {% endif %}
+  </div>
 </dd>
