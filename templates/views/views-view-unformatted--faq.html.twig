@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows for the 'faq' view.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{{ attach_library('wcm8_patterns/accordion-group') }}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+<dl id="accordionGroup" role="presentation" class="Accordion" data-allow-multiple>
+  {% for row in rows %}
+    {% include "@organisms/accordion-group/_accordion-item.twig" with {
+      "accordion_item_number": row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ counter }}'],
+      "accordion_term": row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ title }}'],
+      "accordion_def": row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_faq_answer }}'],
+    } %}
+  {% endfor %}
+</dl>
