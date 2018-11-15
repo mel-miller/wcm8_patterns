@@ -26,8 +26,8 @@
   font-size: 1.1em;
   font-weight: 400;
   margin: 0;
-  margin-bottom: 0.25em;
-  padding: 1em 2.75em 0.9em;
+  margin-bottom: 0.5em;
+  padding: 0.875em 2.75em 0.75em;
   position: relative;
   text-align: left;
   width: 100%;
@@ -51,24 +51,34 @@
 
   & .accordion-icon {
     transform: rotate(90deg);
-    transition-duration: 0.05s;
+    transition-duration: 0.2s;
   }
 }
 
 .accordion-panel {
   margin: 0;
-  margin-bottom: 0.25em;
-  margin-top: -0.35em;
+  margin-bottom: 0.5em;
+  margin-top: -0.625em;
   border: 1px solid $gray-lightest;
   color: $gray-darker;
   font-size: 1em;
   height: auto;
 }
 
+.accordion-panel[hidden] {
+  display: none;
+}
+
 .accordion-panel--inner {
   padding: 1.25em 3em 0.25em;
 }
 
-.accordion-panel[hidden] {
-  display: none;
+//customizations for faqs
+.accordion-panel--inner h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5em;
+}
+
+.accordion-panel--inner h2:first-child {
+  margin-top: 0;
 }
