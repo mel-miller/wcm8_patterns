@@ -127,24 +127,25 @@
       function hashHandler() {
         //get value of the hash
         var hashValue = location.hash;
-        var hashName = hashValue.replace('#','');
-        var hashPanel = hashValue + '.accordion-panel';
 
+        //reusable function to open the accordion
         function openAccordion() {
           $(hashPanel).removeAttr('hidden');
-          var hashNumberValue = hashName.replace('sect','');
-          var hashTrigger = '#accordion' + hashNumberValue + 'id.accordion-trigger';
+
+          var hashId = $(hashPanel).attr('id');
+          var hashNumber = hashId.replace('sect','');
+          var hashTrigger = '#accordion' + hashNumber + 'id.accordion-trigger';
           $(hashTrigger).attr('aria-expanded', 'true');
         }
 
-        // If the hash value matches an accordion panel ID, open the panel
-        if (hashPanel) {
-          openAccordion();
+        // set hashPanel based on whether the hash is the panel id or within the panel
+        if ($(hashValue).hasClass('accordion-panel')) {
+          var hashPanel = hashValue;
+        } else {
+          var hashPanel = $(hashValue).closest('.accordion-panel');
         }
 
-        //see if there are other ids within the accordion panel
-        //check to see if that panel isExpanded
-        //if not, expand it
+        openAccordion();
       }
 
       // to handle a hash on initial page load
