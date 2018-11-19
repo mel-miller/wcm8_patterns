@@ -36,9 +36,10 @@
  * @ingroup themeable
  */
 #}
-
-{% include "@organisms/accordion-group/_accordion-item.twig" with {
-  "accordion_item_number": paragraph_id,
-  "accordion_term": content.field_accordion_term,
-  "accordion_def": content.field_accordion_definition,
-} %}
+<div{{ attributes.addClass(classes) }}>
+  {% include "@organisms/accordion-group/_accordion-item.twig" with {
+    "accordion_item_number": paragraph_id,
+    "accordion_term": content.field_accordion_term,
+    "accordion_def": content.field_accordion_definition,
+  } %}
+</div>

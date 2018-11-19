@@ -37,9 +37,16 @@
  */
 #}
 
+{%
+set classes = [
+  'paragraph-entity',
+  'paragraph-entity--accordion-group'
+]
+%}
+
 {{ attach_library('wcm8_patterns/accordion-group') }}
 
-<div class="paragraph-entity paragraph-entity--accordion-group">
+<div{{ attributes.addClass(classes) }}>
   <dl id="accordionGroup" role="presentation" class="accordion" data-allow-multiple>
     {{ content }}
   </dl>

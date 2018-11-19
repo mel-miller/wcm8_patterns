@@ -1,4 +1,4 @@
-(function(Drupal) {
+(function($, Drupal) {
 
   Drupal.behaviors.accordion = {
     attach: function(context, settings) {
@@ -119,8 +119,43 @@
         }
 
       });
+      //end base accordion functionality
+
+
+      // Open accordion if corresponding hash is in the url
+      // TODO: maybe revist without jQuery
+      function hashHandler() {
+        //get value of the hash
+        var hashValue = location.hash;
+
+        //reusable function to open the accordion
+        function openAccordion() {
+          $(hashPanel).removeAttr('hidden');
+
+          var hashId = $(hashPanel).attr('id');
+          var hashNumber = hashId.replace('sect','');
+          var hashTrigger = '#accordion' + hashNumber + 'id.accordion-trigger';
+          $(hashTrigger).attr('aria-expanded', 'true');
+        }
+
+        // set hashPanel based on whether the hash is the panel id or within the panel
+        if ($(hashValue).hasClass('accordion-panel')) {
+          var hashPanel = hashValue;
+        } else {
+          var hashPanel = $(hashValue).closest('.accordion-panel');
+        }
+
+        openAccordion();
+      }
+
+      // to handle a hash on initial page load
+      if (window.location.hash) {
+        hashHandler();
+      }
+      // and also listen for hashchanges
+      window.addEventListener("hashchange", hashHandler, false);
 
     }
   }
 
-})(Drupal);
+})(jQuery, Drupal);

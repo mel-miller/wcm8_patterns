@@ -51,7 +51,7 @@
 
   & .accordion-icon {
     transform: rotate(90deg);
-    transition-duration: 0.2s;
+    transition-duration: 0.25s;
   }
 }
 
@@ -62,15 +62,20 @@
   border: 1px solid $gray-lightest;
   color: $gray-darker;
   font-size: 1em;
+  display: block;
   height: auto;
+  max-height: 3000px;
+  transition: all 1s ease;
 }
 
 .accordion-panel[hidden] {
-  display: none;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .accordion-panel--inner {
-  padding: 1.25em 3em 0.25em;
+  padding: 2em 3em 1.5em;
 }
 
 //customizations for faqs

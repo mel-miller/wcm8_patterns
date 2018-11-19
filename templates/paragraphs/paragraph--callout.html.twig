@@ -36,8 +36,14 @@
  * @ingroup themeable
  */
 #}
+{%
+set classes = [
+  'paragraph-entity',
+  'paragraph-entity--{{ paragraph_type }}'
+]
+%}
 
-<div class="paragraph-entity paragraph-entity--{{ paragraph_type }}">
+<div{{ attributes.addClass(classes) }}>
   {% include "@molecules/callout/_callout.twig" with {
     "content": content.field_callout_body
   } %}

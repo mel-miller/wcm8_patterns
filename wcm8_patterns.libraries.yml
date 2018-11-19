@@ -9,6 +9,7 @@ accordion-group:
     dist/03-organisms/accordion-group/accordion-group.js: {}
   dependencies:
     - core/drupal
+    - core/jquery
 
 blockquote:
   js:

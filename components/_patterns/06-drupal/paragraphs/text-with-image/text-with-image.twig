@@ -36,7 +36,15 @@
  * @ingroup themeable
  */
 #}
-<div class="paragraph-entity paragraph-entity--text-with-image">
+
+{%
+set classes = [
+  'paragraph-entity',
+  'paragraph-entity--{{ paragraph_type }}'
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
   {% block paragraph_content %}
     <div class="image-position--{{ image_position }} image-size--{{ image_size }}">
       {% if pl %}
