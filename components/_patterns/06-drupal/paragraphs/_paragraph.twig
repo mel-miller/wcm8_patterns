@@ -37,6 +37,13 @@
  */
 #}
 
-<div class="paragraph-entity paragraph-entity--{{ paragraph_type }}">
+{%
+set classes = [
+  'paragraph-entity',
+  'paragraph-entity--{{ paragraph_type }}'
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
   {{ content }}
 </div>
