@@ -119,12 +119,12 @@
         }
 
       });
-      //end base accordion functionality
+      //end basic accordion functionality
 
 
       // Open accordion if corresponding hash is in the url
-      // TODO: maybe revist without jQuery
       function hashHandler() {
+
         //get value of the hash
         var hashValue = location.hash;
         var hashName = hashValue.replace('#','');
@@ -142,7 +142,7 @@
           openAccordion();
         }
 
-        //see if there are other ids within the accordion panel
+        //(optional, for now) see if there are other ids within the accordion panel
         //check to see if that panel isExpanded
         //if not, expand it
       }
@@ -151,7 +151,7 @@
       if (window.location.hash) {
         hashHandler();
       }
-      // and also listen for hashchanges
+      // but also listen for hashchanges
       window.addEventListener("hashchange", hashHandler, false);
 
     }
