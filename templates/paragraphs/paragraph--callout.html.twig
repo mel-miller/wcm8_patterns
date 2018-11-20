@@ -36,15 +36,8 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-  'paragraph-entity',
-  'paragraph-entity--callout',
-]
-%}
 
-<div{{ attributes.addClass(classes) }}>
-  {% include "@molecules/callout/_callout.twig" with {
-    "content": content.field_callout_body
-  } %}
-</div>
+
+{% include "@molecules/callout/_callout.twig" with {
+  "content": content.field_callout_body
+} %}
