@@ -35,6 +35,8 @@
 //edit link on faq page views
 .view-page--faq {
   .edit-link {
-    margin-top: 2em;
+    @include button-alt-teal;
+
+    margin-top: 1em;
   }
 }

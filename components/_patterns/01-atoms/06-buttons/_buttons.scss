@@ -17,6 +17,11 @@
   &:hover {
     background-color: $hoverBg;
     color: $hoverColor;
+
+    //if link
+    a {
+      color: $hoverColor;
+    }
   }
 
   &:focus {
@@ -28,6 +33,10 @@
   a {
     color: $color;
     text-decoration: none;
+
+    &:hover {
+      color: $hoverColor;
+    }
   }
 }
 
@@ -40,15 +49,15 @@
 }
 
 @mixin button-alt {
-  @include button($clear, $red, $red, $red);
+  @include button($clear, $red, $red, $red, $white);
 }
 
 @mixin button-alt-teal {
-  @include button($clear, $teal, $teal, $teal);
+  @include button($clear, $teal, $teal, $teal, $white);
 }
 
 @mixin button-alt-gray {
-  @include button($clear, $gray, $gray, darken($gray, 6%));
+  @include button($clear, $gray, $gray, darken($gray, 6%), $white);
 }
 
 .button {
