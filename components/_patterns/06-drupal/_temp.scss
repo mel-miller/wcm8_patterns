@@ -1,0 +1,32 @@
+//temporary styles while building out pages and components
+
+//faq field on toolsets
+.field--name-field-faqs {
+  margin-top: 6em;
+
+  .viewsreference--view-title {
+    //this should eventually be a h3
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+
+  .more-link {
+    @extend .button;
+
+    margin-top: 1em;
+  }
+}
+
+.views-title-link {
+  margin-bottom: 1em;
+
+  a {
+    text-decoration: none;
+    color: $gray-darker;
+
+    &:hover {
+      color: $color-link--hover;
+    }
+  }
+}
