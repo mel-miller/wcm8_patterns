@@ -140,6 +140,7 @@
  function wcm8_patterns_preprocess_html(array &$variables) {
    // add node id and type to body classes
    if ($node = \Drupal::request()->attributes->get('node')) {
+     $variables['attributes']['class'][] = 'page-node';
      $variables['attributes']['class'][] = 'page-node-' . $node->id();
      $variables['attributes']['class'][] = 'node-type-' . $node->bundle();
    }
