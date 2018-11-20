@@ -18,6 +18,7 @@
   }
 }
 
+//reusable for similar situations to faq field on toolsets
 .views-title-link {
   margin-bottom: 1em;
 
@@ -28,5 +29,12 @@
     &:hover {
       color: $color-link--hover;
     }
+  }
+}
+
+//edit link on faq page views
+.view-page--faq {
+  .edit-link {
+    margin-top: 2em;
   }
 }
