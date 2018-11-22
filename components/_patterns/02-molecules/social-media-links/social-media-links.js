@@ -1,6 +1,6 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.status = {
+  Drupal.behaviors.social = {
     attach: function(context, settings) {
 
       'use strict';
