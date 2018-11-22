@@ -5,6 +5,7 @@
 
       'use strict';
 
+      // for spans
       $(context).find('span.callout').each(function() {
         var caution = '<div class="callout-icon"><span class="visually-hidden">Caution</span><i class="fas fa-exclamation"></i></div>';
         var ux_tip = '<div class="callout-icon"><span class="visually-hidden">UX Tip</span><i class="fas fa-asterisk"></i></div>';
@@ -19,6 +20,7 @@
 
       });
 
+      //for divs
       $(context).find('div.callout').each(function() {
 
         //get the height of the callout div
