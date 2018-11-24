@@ -47,10 +47,13 @@
 {% endif %}
 
 {% extends "@templates/_default.twig" %}
-  {% block page_header %}
-    {% if page.header %}
-      {{ page.header }}
-    {% endif %}
+
+  {% block primary_menu %}
+    {{ page.primary_menu }}
+  {% endblock %}
+
+  {% block hero %}
+    {{ page.hero }}
   {% endblock %}
 
   {% block page_system %}
@@ -68,8 +71,11 @@
     {{ page.sidebar }}
   {% endblock %}
 
-  {% block page_footer %}
-    {% if page.footer %}
-      {{ page.footer }}
-    {% endif %}
+
+  {% block content_after %}
+    {{ page.content_after }}
+  {% endblock %}
+
+  {% block pre_footer %}
+    {{ page.pre_footer }}
   {% endblock %}
