@@ -9,6 +9,8 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .main,
 .region-inner {
   @include wrapper;
+
+  margin: $space-one-half 0;
 }
 
 .main {
