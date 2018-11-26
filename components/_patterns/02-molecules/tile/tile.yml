@@ -1,0 +1,15 @@
+# Title
+tile_title:
+  "This is a tile title"
+
+# Subtitle
+tile_subtitle:
+  "The tile subtitle goes here"
+
+# Body
+tile_body:
+  "Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+
+# Link
+tile_link_url:
+  "#"

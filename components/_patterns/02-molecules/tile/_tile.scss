@@ -1,0 +1,26 @@
+.tile__link {
+  display: block;
+  color: $gray-darker;
+  text-decoration: none;
+  background: $gray-lightest;
+  padding: 1.75em;
+  border-radius: 6px;
+  text-align: center;
+
+  &:hover {
+    color: $gray-darkest;
+    background: lighten($gray-lightest, 3%);
+  }
+}
+
+.tile__title {
+  @include heading-large($font-size: 1.875rem);
+  @include short-bottom;
+}
+
+.tile__subtitle {
+  @extend .tagline;
+
+  font-weight: 100;
+  font-size: 1.25rem;
+}

@@ -1,0 +1,13 @@
+{% extends "@base/layouts/grid/00-grid.twig" %}
+
+{% block grid_content %}
+  {% for tile in tiles %}
+    {% include "@molecules/tile/tile.twig" with {
+    "tile_blockname": tile.blockname,
+    "tile_link_modifiers": tile.tile_link_modifiers,
+    "tile_title": tile.tile_title,
+    "tile_subtitle": tile.tile_subtitle,
+    "tile_body": tile.tile_body,
+    } %}
+  {% endfor %}
+{% endblock %}
