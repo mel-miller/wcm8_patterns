@@ -9,17 +9,12 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .main,
 .region-inner {
   @include wrapper;
-
-  margin-bottom: $space;
 }
 
 .main {
-  margin-top: $space;
+  margin-bottom: $space;
 }
 
-.region-inner--help {
-  margin-bottom: 0;
-}
 
 //
 // Layout Using Flexbox (IE11+).
