@@ -5,7 +5,7 @@
 
       'use strict';
 
-      $(context).find('.status-box span.status').each(function() {
+      $(context).find('.status').each(function() {
         var info = '<div class="icon"><i class="fas fa-info-circle"></i></div>';
         var warning = '<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>';
         var error = '<div class="icon"><i class="fas fa-times-circle"></i></div>';

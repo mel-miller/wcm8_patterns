@@ -39,7 +39,7 @@
           {% endfor %}
         </ul>
       {% else %}
-        <span class="status status--{{ type }}">{{ messages|first }}</span>
+        <div class="status status--{{ type }}">{{ messages|first }}</div>
       {% endif %}
     {% if type == 'error' %}
       </div>
