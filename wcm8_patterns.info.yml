@@ -28,7 +28,6 @@ regions:
   primary_menu: 'Primary Menu'
   hero: 'Hero'
   breadcrumb: 'Breadcrumbs'
-  highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
   sidebar: 'Sidebar'
