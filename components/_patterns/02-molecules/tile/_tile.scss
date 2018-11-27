@@ -20,7 +20,7 @@
 }
 
 .tile__title {
-  @include heading-large($font-size: 1.875rem);
+  @include heading-large($font-size: 1.75rem);
   @include short-bottom;
 }
 
@@ -28,5 +28,12 @@
   @extend .tagline;
 
   font-weight: 100;
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+.tile__grid--toolsets {
+  .tile__subtitle {
+    @include no-bottom;
+  }
 }

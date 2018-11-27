@@ -4,6 +4,7 @@
   {% for tile in tiles %}
     {% include "@molecules/tile/tile.twig" with {
     "tile_modifiers": tile.tile_modifiers,
+    "tile_link_url": tile.tile_link_url,
     "tile_title": tile.tile_title,
     "tile_subtitle": tile.tile_subtitle,
     "tile_body": tile.tile_body,
