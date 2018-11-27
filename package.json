@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "devDependencies": {
     "emulsify-gulp": "^3.0.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "hoverintent": "2.2.0"
   },
   "scripts": {
     "start": "gulp compile && gulp theme",

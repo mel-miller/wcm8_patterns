@@ -3893,6 +3893,10 @@ hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
 
+hoverintent@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/hoverintent/-/hoverintent-2.2.0.tgz#86414f1090e48bdd16d3ae8ee0464a750e89c351"
+
 html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
