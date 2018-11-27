@@ -1,0 +1,82 @@
+nav.a11y-menubar {
+  font-family: $proxima;
+  background-color: $gray-light;
+  display: block;
+  width: 100%;
+
+  ul[role=menubar] {
+    list-style-type: none;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      position: relative;
+
+      a[role=menuitem] {
+        &.a11y-menubar-menuitem {
+          border-right: 1px solid $gray;
+          border-bottom: none;
+        }
+
+        color: $gray-darker;
+        text-decoration: none;
+        background-color: $gray-light;
+        line-height: 1.5rem;
+        padding: 0 1rem;
+        border-bottom: 1px solid $gray;
+        display: block;
+        height: 1.5rem;
+
+        &:focus,
+        &:hover {
+          color: $gray-light;
+          background-color: $gray-darker;
+        }
+      }
+
+      ul[role=menu] {
+        &.a11y-menubar-menu-open {
+          display: block;
+          width: 10rem;
+          position: absolute;
+          top: 1.5rem;
+          left: 0;
+
+          li {
+            display: block;
+            width: 100%;
+
+            ul[role=menu] {
+              top: 0;
+              left: 100%;
+            }
+
+            a[aria-haspopup=true] {
+              &::after {
+                // Right arrows
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.25rem solid transparent;
+                border-bottom: 0.25rem solid transparent;
+                border-left: 0.25rem solid $gray-darker;
+                position: absolute;
+                right: 0.25rem;
+                top: 0.5rem;
+              }
+
+              &:focus::after,
+              &:hover::after {
+                border-left: 0.25rem solid $gray-light;
+              }
+            }
+          }
+        }
+
+        &.a11y-menubar-menu-closed {
+          @include visually-hidden();
+        }
+      }
+    }
+  }
+}
