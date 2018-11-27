@@ -1,15 +1,21 @@
-.tile__link {
-  display: block;
-  color: $gray-darker;
-  text-decoration: none;
+.tile {
   background: $gray-lightest;
-  padding: 1.75em;
   border-radius: 6px;
   text-align: center;
 
   &:hover {
-    color: $gray-darkest;
     background: lighten($gray-lightest, 3%);
+  }
+}
+
+.tile__link {
+  display: block;
+  padding: 1.75em;
+  color: $gray-darker;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray-darkest;
   }
 }
 

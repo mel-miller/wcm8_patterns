@@ -12,3 +12,6 @@ tile_link_url:
 
 tile_body:
   #none
+
+tile_modifiers:
+  1: "toolset"

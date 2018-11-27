@@ -3,6 +3,6 @@
   @include margin;
 }
 
-.tile__link--grid-item {
+.tile--grid-item {
   @include grid-item(3);
 }
