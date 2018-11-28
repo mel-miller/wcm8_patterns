@@ -1,3 +1,7 @@
+.main-nav--inner {
+  @include wrapper;
+}
+
 nav.a11y-menubar {
   font-family: $proxima;
   background-color: $gray-lightest;
@@ -14,18 +18,17 @@ nav.a11y-menubar {
 
       a[role=menuitem] {
         &.a11y-menubar-menuitem {
-          border-right: 1px solid $gray;
           border-bottom: none;
         }
 
         color: $gray-darker;
+        text-transform: uppercase;
         text-decoration: none;
         background-color: $gray-lightest;
-        line-height: 1.5rem;
+        line-height: 2.5rem;
         padding: 0 1rem;
-        border-bottom: 1px solid $gray;
         display: block;
-        height: 1.5rem;
+        height: 2.5rem;
 
         &:focus,
         &:hover {
@@ -39,7 +42,7 @@ nav.a11y-menubar {
           display: block;
           width: 10rem;
           position: absolute;
-          top: 1.5rem;
+          top: 2.5rem;
           left: 0;
 
           li {
@@ -57,17 +60,17 @@ nav.a11y-menubar {
                 content: '';
                 width: 0;
                 height: 0;
-                border-top: 0.25rem solid transparent;
-                border-bottom: 0.25rem solid transparent;
-                border-left: 0.25rem solid $gray-darker;
+                border-top: 0.4375rem solid transparent;
+                border-bottom: 0.4375rem solid transparent;
+                border-left: 0.4375rem solid $gray-darker;
                 position: absolute;
-                right: 0.25rem;
-                top: 0.5rem;
+                right: 0.4375rem;
+                top: 0.75rem;
               }
 
               &:focus::after,
               &:hover::after {
-                border-left: 0.25rem solid $gray-lightest;
+                border-left: 0.4375rem solid $gray-lightest;
               }
             }
           }
