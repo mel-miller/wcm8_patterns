@@ -38,7 +38,7 @@ callout:
 
 hoverintent:
   js:
-    node_modules/hoverintent/dist/hoverintent.min.js: {}
+    dist/js/hoverintent.min.js: {}
 
 main-menu:
   js:
