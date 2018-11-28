@@ -4,6 +4,10 @@ global:
       //www.osu.edu/assets/fonts/webfonts.css: { external: true }
       dist/style.css: {}
 
+a11yMenubar:
+  js:
+    dist/02-molecules/menus/main-menu/a11yMenubar.js: {}
+
 accordion-group:
   js:
     dist/03-organisms/accordion-group/accordion-group.js: {}
@@ -31,6 +35,10 @@ callout:
   dependencies:
     - core/drupal
     - core/jquery
+
+hoverintent:
+  js:
+    node_modules/hoverintent/dist/hoverintent.min.js: {}
 
 main-menu:
   js:

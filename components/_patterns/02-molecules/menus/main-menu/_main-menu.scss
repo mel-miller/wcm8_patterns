@@ -1,6 +1,6 @@
 nav.a11y-menubar {
   font-family: $proxima;
-  background-color: $gray-light;
+  background-color: $gray-lightest;
   display: block;
   width: 100%;
 
@@ -20,7 +20,7 @@ nav.a11y-menubar {
 
         color: $gray-darker;
         text-decoration: none;
-        background-color: $gray-light;
+        background-color: $gray-lightest;
         line-height: 1.5rem;
         padding: 0 1rem;
         border-bottom: 1px solid $gray;
@@ -29,7 +29,7 @@ nav.a11y-menubar {
 
         &:focus,
         &:hover {
-          color: $gray-light;
+          color: $gray-lightest;
           background-color: $gray-darker;
         }
       }
@@ -67,7 +67,7 @@ nav.a11y-menubar {
 
               &:focus::after,
               &:hover::after {
-                border-left: 0.25rem solid $gray-light;
+                border-left: 0.25rem solid $gray-lightest;
               }
             }
           }
@@ -78,5 +78,15 @@ nav.a11y-menubar {
         }
       }
     }
+  }
+
+  //reset
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
   }
 }
