@@ -1,1 +1,516 @@
-"use strict";function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _defineProperties(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,"value"in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}function _createClass(a,b,c){return b&&_defineProperties(a.prototype,b),c&&_defineProperties(a,c),a}var a11yMenubar=function(){function a(b){var c=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document,d=2<arguments.length&&void 0!==arguments[2]?arguments[2]:"",e=3<arguments.length&&void 0!==arguments[3]?arguments[3]:e;_classCallCheck(this,a),this._keyCode={TAB:9,ENTER:13,ESC:27,SPACE:32,END:35,HOME:36,ARROW_LEFT:37,ARROW_UP:38,ARROW_RIGHT:39,ARROW_DOWN:40},this._id=b,this._domObj=c,this._hoverintent=e,this._ariaLabel=d,this._navElem=this._domObj.getElementById(this._id),this._menubarMenuitems=[],this._currentMenubarIndex=0,this._currentMenuitem=null,this._navElem.setAttribute("aria-label",this._ariaLabel),this._navElem.classList.add("a11y-menubar");var f=this._navElem.querySelector("ul");if(f.setAttribute("role","menubar"),f.setAttribute("aria-label",this._ariaLabel),this._hoverintent){this._hoverintent(f,function(){},this.handleMouseoutMenubar.bind(this)).options({timeout:900,interval:50})}else f.addEventListener("mouseout",this.handleMouseoutMenubar.bind(this));for(var g,h=f.children,m=0;m<h.length;m++)g=h[m].firstChild,g.classList.add("a11y-menubar-menuitem"),this._menubarMenuitems[m]=g,g.addEventListener("keydown",this.handleKeydownMenubar.bind(this));for(var n=this._navElem.querySelectorAll("a + ul > li > a"),o=0;o<n.length;o++)n[o].addEventListener("keydown",this.handleKeydownSubmenu.bind(this));for(var p=f.querySelectorAll("li > a"),q=0;q<p.length;q++){p[q].setAttribute("role","menuitem"),p[q].setAttribute("tabindex","-1");for(var r=p[q].parentNode,s=r.querySelectorAll("a + ul"),t=0;t<s.length;t++){var u=s[t].parentNode,v=u.querySelector("a"),w=v.textContent;v.setAttribute("aria-haspopup","true"),v.setAttribute("aria-expanded","false"),s[t].setAttribute("role","menu"),s[t].setAttribute("aria-label",w),s[t].classList.add("a11y-menubar-menu-closed")}if(this._hoverintent){this._hoverintent(p[q],this.handleMouseoverMenuitem.bind(this),function(){}).options({timeout:100,interval:0})}else p[q].addEventListener("mouseover",this.handleMouseoverMenuitem.bind(this))}for(var x=f.querySelectorAll("li"),y=0;y<x.length;y++)x[y].setAttribute("role","none");this._menubarMenuitems[0].setAttribute("tabindex","0"),this._currentMenuitem=this._menubarMenuitems[0]}return _createClass(a,[{key:"destroy",value:function a(){}},{key:"handleKeydownMenubar",value:function i(a){if(!a.defaultPrevented){var b=!1,c=a.target,d=this.normalizeKey(a.key||a.keyCode);if(d==this._keyCode.SPACE||d==this._keyCode.ENTER||d==this._keyCode.ARROW_DOWN){this.closeAllSubmenus(),this.openSubmenu(c);var j=c.parentNode.querySelector("ul[role=menu] > li > a[role=menuitem]");null!=j&&(j.focus(),this.updateCurrentMenuitem(j)),b=!0}else if(d==this._keyCode.ARROW_RIGHT){var e=this._currentMenubarIndex+1>=this._menubarMenuitems.length?0:this._currentMenubarIndex+1,f=this._menubarMenuitems[e];f.focus(),this._currentMenubarIndex=e,this.updateCurrentMenuitem(f),b=!0}else if(d==this._keyCode.ARROW_LEFT){var g=0>this._currentMenubarIndex-1?this._menubarMenuitems.length-1:this._currentMenubarIndex-1,h=this._menubarMenuitems[g];h.focus(),this._currentMenubarIndex=g,this.updateCurrentMenuitem(h),b=!0}else if(d==this._keyCode.ARROW_UP){this.openSubmenu(c);var k=c.parentNode.querySelector("ul[role=menu]").lastElementChild.firstElementChild;k.focus(),this.updateCurrentMenuitem(k),b=!0}else if(d==this._keyCode.HOME){var l=this._menubarMenuitems[0];l.focus(),this.updateCurrentMenuitem(l),b=!0}else if(d==this._keyCode.END){var m=this._menubarMenuitems[this._menubarMenuitems.length-1];m.focus(),this.updateCurrentMenuitem(m),b=!0}else;b&&(a.stopPropagation(),a.preventDefault())}}},{key:"handleKeydownSubmenu",value:function m(a){if(!a.defaultPrevented){var b=!1,c=a.target,d=this.normalizeKey(a.key||a.keyCode);if(d==this._keyCode.SPACE||d==this._keyCode.ENTER)c.click(),b=!0;else if(d==this._keyCode.ESC){var n=c.parentNode.parentNode.parentNode.querySelector("a[role=menuitem]");this.closeSubmenu(n),n.focus(),this.updateCurrentMenuitem(n),b=!0}else if(d==this._keyCode.ARROW_RIGHT){if(this.hasSubmenu(c)){var o=c.parentNode.querySelector("a + ul").querySelector("li > a");this.openSubmenu(c),o.focus(),this.updateCurrentMenuitem(o)}else{this.closeAllSubmenus();var e=this._currentMenubarIndex+1>=this._menubarMenuitems.length?0:this._currentMenubarIndex+1,f=this._menubarMenuitems[e];f.focus(),this.openSubmenu(f),this._currentMenubarIndex=e,this.updateCurrentMenuitem(f)}b=!0}else if(d==this._keyCode.ARROW_LEFT){var p=c.parentNode.parentNode.parentNode.querySelector("a[role=menuitem]");if(this.closeSubmenu(p),p.focus(),this.updateCurrentMenuitem(p),this._currentMenuitem.classList.contains("a11y-menubar-menuitem")){var g=0>this._currentMenubarIndex-1?this._menubarMenuitems.length-1:this._currentMenubarIndex-1,h=this._menubarMenuitems[g];h.focus(),this.openSubmenu(h),this._currentMenubarIndex=g,this.updateCurrentMenuitem(h)}b=!0}else if(d==this._keyCode.ARROW_DOWN){var i=void 0,j=c.parentNode.nextElementSibling;i=null==j?c.parentNode.parentNode.firstElementChild.querySelector("a"):j.querySelector("a"),i.focus(),this.updateCurrentMenuitem(i),b=!0}else if(d==this._keyCode.ARROW_UP){var k=void 0,l=c.parentNode.previousElementSibling;k=null==l?c.parentNode.parentNode.lastElementChild.querySelector("a"):l.querySelector("a"),k.focus(),this.updateCurrentMenuitem(k),b=!0}else if(d==this._keyCode.HOME){var q=c.parentNode.parentNode.firstElementChild.querySelector("a");q.focus(),this.updateCurrentMenuitem(q),b=!0}else if(d==this._keyCode.END){var r=c.parentNode.parentNode.lastElementChild.querySelector("a");r.focus(),this.updateCurrentMenuitem(r),b=!0}else;b&&(a.stopPropagation(),a.preventDefault())}}},{key:"handleMouseoverMenuitem",value:function c(a){if(!a.defaultPrevented){var b=a.target;this.hasSubmenu(b)&&this.openSubmenu(b),this.closeSiblingSubmenus(b)}}},{key:"handleMouseoutMenubar",value:function b(a){if(!a.defaultPrevented){a.target;this.closeAllSubmenus()}}},{key:"updateCurrentMenuitem",value:function b(a){this._currentMenuitem.setAttribute("tabindex","-1"),this._currentMenuitem=a,this._currentMenuitem.setAttribute("tabindex","0")}},{key:"hasSubmenu",value:function d(a){var b=a.parentNode,c=b.querySelector("a + ul");return null!=c}},{key:"openSubmenu",value:function d(a){var b=a.parentNode,c=b.querySelector("ul");null!=c&&(c.classList.remove("a11y-menubar-menu-closed"),c.classList.add("a11y-menubar-menu-open"),a.setAttribute("aria-expanded","true"))}},{key:"closeSubmenu",value:function d(a){var b=a.parentNode,c=b.querySelector("ul");null!=c&&(c.classList.remove("a11y-menubar-menu-open"),c.classList.add("a11y-menubar-menu-closed"),a.setAttribute("aria-expanded","false"))}},{key:"closeSiblingSubmenus",value:function f(a){for(var b=a.parentNode.parentNode,c=b.querySelectorAll("li > a[role=menuitem]"),d=[],e=0;e<c.length;e++)c[e]!==a&&d.push(c[e]);for(var g=0;g<d.length;g++)this.closeSubmenu(d[g])}},{key:"closeAllSubmenus",value:function d(){for(var a,b=this._navElem.querySelectorAll("ul.a11y-menubar-menu-open"),c=0;c<b.length;c++)a=b[c].parentNode.querySelector("a"),a.setAttribute("aria-expanded","false"),b[c].classList.remove("a11y-menubar-menu-open"),b[c].classList.add("a11y-menubar-menu-closed")}},{key:"normalizeKey",value:function c(a){var b=null;switch(a){case"Tab":case 9:b=this._keyCode.TAB;break;case"Enter":case 13:b=this._keyCode.ENTER;break;case"Escape":case"Esc":case 13:b=this._keyCode.ESC;break;case" ":case 32:b=this._keyCode.SPACE;break;case"End":case 35:b=this._keyCode.END;case"Home":case 36:b=this._keyCode.HOME;break;case"ArrowLeft":case 37:b=this._keyCode.ARROW_LEFT;break;case"ArrowUp":case 38:b=this._keyCode.ARROW_UP;break;case"ArrowRight":case 39:b=this._keyCode.ARROW_RIGHT;break;case"ArrowDown":case 40:b=this._keyCode.ARROW_DOWN;}return b}}]),a}();
+/**
+ * @file a11yMenubar.js
+ */
+
+class a11yMenubar {
+
+  constructor(id, domObj=document, ariaLabel='', hoverintent=hoverintent) {
+    // Define members.
+    this._keyCode = {
+      'TAB':      9,
+      'ENTER':    13,
+      'ESC':      27,
+      'SPACE':    32,
+      'END':      35,
+      'HOME':     36,
+      'ARROW_LEFT':     37,
+      'ARROW_UP':       38,
+      'ARROW_RIGHT':    39,
+      'ARROW_DOWN':     40,
+    };
+
+    this._id = id;
+    this._domObj = domObj;
+    this._hoverintent = hoverintent;
+    this._ariaLabel = ariaLabel;
+    this._navElem = this._domObj.getElementById(this._id);
+    this._menubarMenuitems = [];
+    this._currentMenubarIndex = 0;
+    this._currentMenuitem = null;
+
+    // TODO: Add configurable defaults for class names.
+
+    // TODO: Add aria-orientation attribute.
+
+    // Set up aria roles and attributes.
+    this._navElem.setAttribute('aria-label', this._ariaLabel);
+    this._navElem.classList.add('a11y-menubar');
+
+    let menubar = this._navElem.querySelector('ul');
+
+    menubar.setAttribute('role', 'menubar');
+    menubar.setAttribute('aria-label', this._ariaLabel);
+
+    // Add hoverintent functionality (or mouse events if hoverintent not available).
+    if (this._hoverintent) {
+      // Hoverintent in environment.
+      let options = {
+        timeout: 900,
+        interval: 50
+      };
+
+      this._hoverintent(
+          menubar,
+          function (event) {},
+          this.handleMouseoutMenubar.bind(this)
+      ).options(options);
+    }
+    else {
+      // Default mouse events.
+      menubar.addEventListener('mouseout', this.handleMouseoutMenubar.bind(this));
+    }
+
+    // For menubar menuitems specifically.
+    let menubarMenuitems = menubar.children;
+
+    for (let i = 0; i < menubarMenuitems.length; i++) {
+      let menubarMenuitem = menubarMenuitems[i].firstChild;
+      menubarMenuitem.classList.add('a11y-menubar-menuitem');
+
+      // collect these as an Array or something and store in the class.
+      this._menubarMenuitems[i] = menubarMenuitem;
+
+      // Add keydown handler (bound to a11yMenubar instance).
+      menubarMenuitem.addEventListener('keydown', this.handleKeydownMenubar.bind(this));
+    }
+
+    // Add keydown handler to submenu menuitems (bound to a11yMenubar instance).
+    let submenuMenuitems = this._navElem.querySelectorAll('a + ul > li > a');
+
+    for (let i = 0; i < submenuMenuitems.length; i++) {
+      submenuMenuitems[i].addEventListener('keydown', this.handleKeydownSubmenu.bind(this));
+    }
+
+    // Attributes for all menuitems.
+    let menuitems = menubar.querySelectorAll('li > a');
+
+    for (let j = 0; j < menuitems.length; j++) {
+      menuitems[j].setAttribute('role', 'menuitem');
+      menuitems[j].setAttribute('tabindex', '-1');
+
+      // Check for submenus.
+      let liElem = menuitems[j].parentNode;
+      let submenus = liElem.querySelectorAll('a + ul');
+
+      for (let k = 0; k < submenus.length; k++) {
+        // Get aria-label from anchor sibing.
+        let submenuLiElem = submenus[k].parentNode;
+        let aElem = submenuLiElem.querySelector('a');
+        let aElemText = aElem.textContent;
+
+        aElem.setAttribute('aria-haspopup', 'true');
+        aElem.setAttribute('aria-expanded', 'false');
+
+        submenus[k].setAttribute('role', 'menu');
+        submenus[k].setAttribute('aria-label', aElemText);
+        submenus[k].classList.add('a11y-menubar-menu-closed');
+      }
+
+      // Add hoverintent functionality (or mouse events if hoverintent not available).
+      if (this._hoverintent) {
+        // Hoverintent in environment.
+        let options = {
+          timeout: 100,
+          interval: 0
+        };
+
+        this._hoverintent(
+            menuitems[j],
+            this.handleMouseoverMenuitem.bind(this),
+            function (event) {}
+        ).options(options);
+      }
+      else {
+        // Default mouse events.
+        menuitems[j].addEventListener('mouseover', this.handleMouseoverMenuitem.bind(this));
+      }
+    }
+
+    // All li elements should have an aria role of "none".
+    let liElem = menubar.querySelectorAll('li');
+
+    for (let l = 0; l < liElem.length; l++) {
+      liElem[l].setAttribute('role', 'none');
+    }
+
+    // First menubar menuitem should have tabindex 0.
+    this._menubarMenuitems[0].setAttribute('tabindex', '0');
+
+    // First menubar menuitem should be the current menuitem.
+    this._currentMenuitem = this._menubarMenuitems[0];
+
+  }
+
+  destroy () {
+    // Remove all attributes/behaviors, etc. from constructor.
+  }
+
+  // Event Handlers -----------------------------------------------------
+
+  handleKeydownMenubar (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    let preventDefault = false; // Flag to prevent the keypress from doing what it usually would do.
+    let menuitem = event.target;
+    let key = this.normalizeKey(event.key || event.keyCode);
+
+    if (key == this._keyCode.SPACE || key == this._keyCode.ENTER || key == this._keyCode.ARROW_DOWN) {
+      // Opens submenu and moves focus to first item in the submenu.
+      this.closeAllSubmenus();
+      this.openSubmenu(menuitem);
+      let firstMenuitem = menuitem.parentNode.querySelector('ul[role=menu] > li > a[role=menuitem]');
+
+      if (firstMenuitem != null) {
+        firstMenuitem.focus();
+        this.updateCurrentMenuitem(firstMenuitem);
+      }
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_RIGHT) {
+      /*
+        -Moves focus to the next item in the menubar.
+        -If focus is on the last item, moves focus to the first item.
+       */
+      let nextMenubarIndex = (this._currentMenubarIndex + 1 >= this._menubarMenuitems.length) ? 0 : this._currentMenubarIndex + 1;
+      let nextMenubarItem = this._menubarMenuitems[nextMenubarIndex];
+
+      nextMenubarItem.focus();
+      this._currentMenubarIndex = nextMenubarIndex;
+      this.updateCurrentMenuitem(nextMenubarItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_LEFT) {
+      /*
+        -Moves focus to the previous item in the menubar.
+        -If focus is on the first item, moves focus to the last item.
+       */
+      let prevMenubarIndex = (this._currentMenubarIndex - 1 < 0) ? this._menubarMenuitems.length - 1 : this._currentMenubarIndex - 1;
+      let prevMenubarItem = this._menubarMenuitems[prevMenubarIndex];
+
+      prevMenubarItem.focus();
+      this._currentMenubarIndex = prevMenubarIndex;
+      this.updateCurrentMenuitem(prevMenubarItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_UP) {
+      // Opens submenu and moves focus to last item in the submenu.
+      this.openSubmenu(menuitem);
+      let lastMenuitem = menuitem.parentNode.querySelector('ul[role=menu]').lastElementChild.firstElementChild;
+      lastMenuitem.focus();
+      this.updateCurrentMenuitem(lastMenuitem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.HOME) {
+      // Moves focus to first item in the menubar.
+      let firstMenubarItem = this._menubarMenuitems[0];
+      firstMenubarItem.focus();
+      this.updateCurrentMenuitem(firstMenubarItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.END) {
+      // Moves focus to last item in the menubar.
+      let lastMenubarItem = this._menubarMenuitems[this._menubarMenuitems.length - 1];
+      lastMenubarItem.focus();
+      this.updateCurrentMenuitem(lastMenubarItem);
+      preventDefault = true;
+    }
+    else {
+      // TODO: Consider adding optional character handling.
+    }
+
+    if (preventDefault) {
+      // The following statements will stop the keys from doing stuff.
+      event.stopPropagation();
+      event.preventDefault();
+    }
+
+  }
+
+  handleKeydownSubmenu (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    let preventDefault = false; // Flag to prevent the keypress from doing what it usually would do.
+    let menuitem = event.target;
+    let key = this.normalizeKey(event.key || event.keyCode);
+
+    if (key == this._keyCode.SPACE || key == this._keyCode.ENTER) {
+      // Activates menu item, causing the link to be activated.
+      menuitem.click();
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ESC) {
+      /*
+        -Closes submenu.
+        -Moves focus to parent menubar item.
+       */
+      let parentMenuitem = menuitem.parentNode.parentNode.parentNode.querySelector('a[role=menuitem]');
+      this.closeSubmenu(parentMenuitem);
+      parentMenuitem.focus();
+      this.updateCurrentMenuitem(parentMenuitem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_RIGHT) {
+      /*
+        -If focus is on an item with a submenu, opens the submenu and places focus on the first item.
+        -If focus is on an item that does not have a submenu:
+            -Closes submenu.
+            -Moves focus to next item in the menubar.
+            -Opens submenu of newly focused menubar item, keeping focus on that parent menubar item.
+       */
+      if (this.hasSubmenu(menuitem)) {
+        let firstSubmenuItem = menuitem.parentNode.querySelector('a + ul').querySelector('li > a');
+        this.openSubmenu(menuitem);
+        firstSubmenuItem.focus();
+        this.updateCurrentMenuitem(firstSubmenuItem);
+      }
+      else {
+        this.closeAllSubmenus();
+
+        let nextMenubarIndex = (this._currentMenubarIndex + 1 >= this._menubarMenuitems.length) ? 0 : this._currentMenubarIndex + 1;
+        let nextMenubarItem = this._menubarMenuitems[nextMenubarIndex];
+
+        nextMenubarItem.focus();
+        this.openSubmenu(nextMenubarItem);
+        this._currentMenubarIndex = nextMenubarIndex;
+        this.updateCurrentMenuitem(nextMenubarItem);
+      }
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_LEFT) {
+      /*
+        -Closes submenu and moves focus to parent menu item.
+        -If parent menu item is in the menubar, also:
+            -moves focus to previous item in the menubar.
+            -Opens submenu of newly focused menubar item, keeping focus on that parent menubar item.
+       */
+      let submenuParentMenuitem = menuitem.parentNode.parentNode.parentNode.querySelector('a[role=menuitem]');
+      this.closeSubmenu(submenuParentMenuitem);
+      submenuParentMenuitem.focus();
+      this.updateCurrentMenuitem(submenuParentMenuitem);
+
+      if (this._currentMenuitem.classList.contains('a11y-menubar-menuitem')) {
+        let prevMenubarIndex = (this._currentMenubarIndex - 1 < 0) ? this._menubarMenuitems.length - 1 : this._currentMenubarIndex - 1;
+        let prevMenubarItem = this._menubarMenuitems[prevMenubarIndex];
+
+        prevMenubarItem.focus();
+        this.openSubmenu(prevMenubarItem);
+        this._currentMenubarIndex = prevMenubarIndex;
+        this.updateCurrentMenuitem(prevMenubarItem);
+      }
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_DOWN) {
+      /*
+        -Moves focus to the next item in the submenu.
+        -If focus is on the last item, moves focus to the first item.
+       */
+      let nextSubmenuItem = undefined;
+      let nextSubmenuLiElem = menuitem.parentNode.nextElementSibling;
+      if (nextSubmenuLiElem == null) {
+        nextSubmenuItem = menuitem.parentNode.parentNode.firstElementChild.querySelector('a');
+      }
+      else {
+        nextSubmenuItem = nextSubmenuLiElem.querySelector('a');
+      }
+      nextSubmenuItem.focus();
+      this.updateCurrentMenuitem(nextSubmenuItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.ARROW_UP) {
+      /*
+        -Moves focus to previous item in the submenu.
+        -If focus is on the first item, moves focus to the last item.
+      */
+      let prevSubmenuItem = undefined;
+      let prevSubmenuLiElem = menuitem.parentNode.previousElementSibling;
+      if (prevSubmenuLiElem == null) {
+        prevSubmenuItem = menuitem.parentNode.parentNode.lastElementChild.querySelector('a');
+      }
+      else {
+        prevSubmenuItem = prevSubmenuLiElem.querySelector('a');
+      }
+      prevSubmenuItem.focus();
+      this.updateCurrentMenuitem(prevSubmenuItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.HOME) {
+      // Moves focus to the first item in the submenu.
+      let firstSubmenuItem = menuitem.parentNode.parentNode.firstElementChild.querySelector('a');
+      firstSubmenuItem.focus();
+      this.updateCurrentMenuitem(firstSubmenuItem);
+      preventDefault = true;
+    }
+    else if (key == this._keyCode.END) {
+      // Moves focus to the last item in the submenu.
+      let lastSubmenuItem = menuitem.parentNode.parentNode.lastElementChild.querySelector('a');
+      lastSubmenuItem.focus();
+      this.updateCurrentMenuitem(lastSubmenuItem);
+      preventDefault = true;
+    }
+    else {
+      // TODO: Consider adding optional printable character handling.
+    }
+
+    if (preventDefault) {
+      // The following statements will stop the keys from doing stuff.
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  handleMouseoverMenuitem (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    let menuitem = event.target;
+
+    if (this.hasSubmenu(menuitem)) {
+      this.openSubmenu(menuitem);
+    }
+
+    this.closeSiblingSubmenus(menuitem);
+  }
+
+  handleMouseoutMenubar (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    let menubar = event.target;
+
+    this.closeAllSubmenus();
+  }
+
+  // Utility functions -----------------------------------------------
+
+  updateCurrentMenuitem (newMenuitem) {
+    this._currentMenuitem.setAttribute('tabindex', '-1');
+    this._currentMenuitem = newMenuitem;
+    this._currentMenuitem.setAttribute('tabindex', '0');
+  }
+
+  hasSubmenu (menuitem) {
+    let liElem = menuitem.parentNode;
+    let menu = liElem.querySelector('a + ul');
+    let response = (menu == null) ? false : true;
+
+    return response;
+  }
+
+  openSubmenu (menuitem) {
+    let liElem = menuitem.parentNode;
+    let menu = liElem.querySelector('ul');
+
+    // Only open submenu if it exists.
+    if (menu != null) {
+      menu.classList.remove('a11y-menubar-menu-closed');
+      menu.classList.add('a11y-menubar-menu-open');
+      menuitem.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  closeSubmenu (menuitem) {
+    let liElem = menuitem.parentNode;
+    let menu = liElem.querySelector('ul');
+
+    // Only close submenu if it exists.
+    if (menu != null) {
+      menu.classList.remove('a11y-menubar-menu-open');
+      menu.classList.add('a11y-menubar-menu-closed');
+      menuitem.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  closeSiblingSubmenus (menuitem) {
+    let ulElem = menuitem.parentNode.parentNode;
+    let siblings = ulElem.querySelectorAll('li > a[role=menuitem]');
+    let siblingsArray = [];
+
+    // Remove menuitem from siblings.
+    for (let i = 0; i < siblings.length; i++) {
+      if (siblings[i] !== menuitem) {
+        siblingsArray.push(siblings[i]);
+      }
+    }
+
+    for (let j = 0; j < siblingsArray.length; j++) {
+      this.closeSubmenu(siblingsArray[j]);
+    }
+  }
+
+  closeAllSubmenus() {
+    // Closes all currently open submenus.
+    let openSubmenus = this._navElem.querySelectorAll('ul.a11y-menubar-menu-open');
+
+    for (let i = 0; i < openSubmenus.length; i++) {
+      let aElem = openSubmenus[i].parentNode.querySelector('a');
+      aElem.setAttribute('aria-expanded', 'false');
+      openSubmenus[i].classList.remove('a11y-menubar-menu-open');
+      openSubmenus[i].classList.add('a11y-menubar-menu-closed');
+    }
+  }
+
+  normalizeKey (key) {
+    let normalizedKey = null;
+
+    switch (key) {
+      case 'Tab':
+      case 9:
+        normalizedKey = this._keyCode.TAB;
+        break;
+
+      case 'Enter':
+      case 13:
+        normalizedKey = this._keyCode.ENTER;
+        break;
+
+      case 'Escape':
+      case 'Esc':
+      case 13:
+        normalizedKey = this._keyCode.ESC;
+        break;
+
+      case ' ':
+      case 32:
+        normalizedKey = this._keyCode.SPACE;
+        break;
+
+      case 'End':
+      case 35:
+        normalizedKey = this._keyCode.END;
+
+      case 'Home':
+      case 36:
+        normalizedKey = this._keyCode.HOME;
+        break;
+
+      case 'ArrowLeft':
+      case 37:
+        normalizedKey = this._keyCode.ARROW_LEFT;
+        break;
+
+      case 'ArrowUp':
+      case 38:
+        normalizedKey = this._keyCode.ARROW_UP;
+        break;
+      
+      case 'ArrowRight':
+      case 39:
+        normalizedKey = this._keyCode.ARROW_RIGHT;
+        break;
+
+      case 'ArrowDown':
+      case 40:
+        normalizedKey = this._keyCode.ARROW_DOWN;
+        break;
+    }
+
+    return normalizedKey;
+  }
+
+};
