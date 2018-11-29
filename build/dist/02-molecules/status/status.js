@@ -1,0 +1,2 @@
+'use strict';(function(a,b){b.behaviors.status={attach:function attach(b){'use strict';a(b).find('.status-box span.status').each(function(){a(this).hasClass('status--status')?a(this).prepend('<div class="icon"><i class="fas fa-info-circle"></i></div>'):a(this).hasClass('status--warning')?a(this).prepend('<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>'):a(this).hasClass('status--error')&&a(this).prepend('<div class="icon"><i class="fas fa-times-circle"></i></div>')})}}})(jQuery,Drupal);
+//# sourceMappingURL=status.js.map
