@@ -1,10 +1,8 @@
 # Ignore compiled files.
-# dist -- commenting out for now
 vendor
-build
 
 # Pattern Lab (ignored initially)
-pattern-lab
+/pattern-lab
 
 # Twig helper functions -- commenting out for now
 # **/add_attributes.function.php
