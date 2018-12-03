@@ -1,3 +1,7 @@
+h2#block-mainnavigation {
+  @include visually-hidden();
+}
+
 .main-nav--inner {
   @include wrapper;
 }
