@@ -1,0 +1,99 @@
+h2#block-mainnavigation {
+  @include visually-hidden();
+}
+
+.main-nav--inner {
+  @include wrapper;
+}
+
+nav.a11y-menubar {
+  font-family: $proxima;
+  background-color: $gray-lightest;
+  display: block;
+  width: 100%;
+
+  ul[role=menubar] {
+    list-style-type: none;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      position: relative;
+
+      a[role=menuitem] {
+        &.a11y-menubar-menuitem {
+          border-bottom: none;
+        }
+
+        color: $gray-darker;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: $gray-lightest;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+        display: block;
+        height: 2.5rem;
+
+        &:focus,
+        &:hover {
+          color: $gray-lightest;
+          background-color: $gray-darker;
+        }
+      }
+
+      ul[role=menu] {
+        &.a11y-menubar-menu-open {
+          display: block;
+          width: 10rem;
+          position: absolute;
+          top: 2.5rem;
+          left: 0;
+
+          li {
+            display: block;
+            width: 100%;
+
+            ul[role=menu] {
+              top: 0;
+              left: 100%;
+            }
+
+            a[aria-haspopup=true] {
+              &::after {
+                // Right arrows
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.4375rem solid transparent;
+                border-bottom: 0.4375rem solid transparent;
+                border-left: 0.4375rem solid $gray-darker;
+                position: absolute;
+                right: 0.4375rem;
+                top: 0.75rem;
+              }
+
+              &:focus::after,
+              &:hover::after {
+                border-left: 0.4375rem solid $gray-lightest;
+              }
+            }
+          }
+        }
+
+        &.a11y-menubar-menu-closed {
+          @include visually-hidden();
+        }
+      }
+    }
+  }
+
+  //reset
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+}

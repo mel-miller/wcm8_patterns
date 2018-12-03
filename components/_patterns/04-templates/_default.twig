@@ -20,6 +20,9 @@
 <div {{ bem('layout-container', (layout_modifiers)) }}>
 
   {% block primary_menu %}
+  <div class="region region--primary_menu">
+    {% include "@molecules/menus/main-menu/main-menu.twig" %}
+  </div>
   {% endblock %}
 
   {% block hero %}

@@ -6,9 +6,13 @@
     "emulsify-gulp": "^3.0.0",
     "gulp": "^3.9.1"
   },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "hoverintent": "^2.2.0"
+  },
   "scripts": {
     "start": "gulp compile && gulp theme",
-    "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
+    "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh && ./scripts/node_modules.sh"
   },
   "precommit.silent": true
 }
