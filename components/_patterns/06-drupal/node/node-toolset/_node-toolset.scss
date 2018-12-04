@@ -1,0 +1,17 @@
+.node--toolset {
+  //breakout the whole content area in order to add full-width background colors
+  @include breakout;
+
+  .toolset__section {
+    @include wrapper;
+  }
+
+  #basic-info {
+    background: $gray-lightest;
+  }
+
+  .field--name-field-toolset-summary,
+  .field--name-field-toolset-description {
+    margin-bottom: 1em;
+  }
+}
