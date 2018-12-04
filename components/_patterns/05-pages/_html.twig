@@ -23,6 +23,16 @@
  * @see template_preprocess_html()
  */
 #}
+
+{%
+  set body_classes = [
+    logged_in ? 'logged-in',
+    user.getRoles()|join(' role_'),
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
@@ -32,7 +42,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
-  <body{{ attributes }}>
+  <body{{ attributes.addClass(body_classes) }}>
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>

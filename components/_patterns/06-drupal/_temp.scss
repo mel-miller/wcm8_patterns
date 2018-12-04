@@ -33,10 +33,18 @@
 }
 
 //edit link on faq page views
+//TODO: do this a better way -- quick fix for now
 .view-page--faq {
   .edit-link {
     @include button-alt-teal;
 
     margin-top: 1em;
+    display: none;
+  }
+}
+
+.logged-in .view-page--faq {
+  .edit-link {
+    display: inline-block;
   }
 }
