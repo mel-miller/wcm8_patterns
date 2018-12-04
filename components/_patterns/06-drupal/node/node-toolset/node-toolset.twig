@@ -5,7 +5,7 @@
 {% embed "@drupal/node/_node.twig" %}
   {% block node_content %}
     {% if pl %}
-      <div id="basic-info" class="toolset__section">
+      <div id="basic-info" class="toolset-section toolset-section--basic-info">
         {% include "@drupal/fields/field-toolset-summary/field-toolset-summary.twig" with {
           field_content: field_toolset_summary,
           field_name: "field-toolset-summary",

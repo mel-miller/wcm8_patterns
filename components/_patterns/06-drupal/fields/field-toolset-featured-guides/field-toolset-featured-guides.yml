@@ -1,0 +1,9 @@
+label : Featured guides
+items:
+  1:
+    content: "Getting Started with Mediasite"
+    url: "#"
+  2:
+    content: "Sharing Mediasite Presentations"
+  3:
+    content: "Analytics & Reports in MyMediasite"

@@ -2,10 +2,6 @@
   //breakout the whole content area in order to add full-width background colors
   @include breakout;
 
-  .toolset__section {
-    @include wrapper;
-  }
-
   #basic-info {
     background: $gray-lightest;
   }
