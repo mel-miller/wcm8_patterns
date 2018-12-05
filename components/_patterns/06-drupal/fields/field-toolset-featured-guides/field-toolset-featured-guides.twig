@@ -2,11 +2,15 @@
 {% set grid_base_class = grid_base_class|default('tile__grid tile__grid--guides') %}
 
 {% block grid_header %}
-  {% include "@atoms/02-text/00-headings/_heading.twig" with {
-    "heading_level": 3,
-    "heading": featured_guides_label,
-    "heading_modifiers": ["resources"],
-  } %}
+  {% if pl %}
+  <h3 class="h3 h3--resources">Featured Guides</h3>
+  {% else %}
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 3,
+      "heading": label,
+      "heading_modifiers": ["resources"],
+    } %}
+  {% endif %}
 {% endblock %}
 
 {% block grid_content %}
