@@ -88,3 +88,7 @@
     @include button-alt-teal;
   }
 }
+
+.more-link {
+  @include button;
+}

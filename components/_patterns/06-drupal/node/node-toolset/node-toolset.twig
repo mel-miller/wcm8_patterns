@@ -29,7 +29,9 @@
       {% include "@organisms/resources-section/resources-section.twig" %}
 
     {% else %}
-      {{ content }}
+      {{ content.group_basic_info }}
+      {{ content.group_resources }}
+      {{ content.group_related_learning_topics }}
     {% endif %}
   {% endblock %}
 {% endembed %}

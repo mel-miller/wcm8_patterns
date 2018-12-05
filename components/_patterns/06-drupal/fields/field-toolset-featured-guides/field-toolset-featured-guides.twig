@@ -3,7 +3,7 @@
 
 {% block grid_header %}
   {% if pl %}
-  <h3 class="h3 h3--resources">Featured Guides</h3>
+  <h3 class="h3 h3--resources">Featured Instructional Guides</h3>
   {% else %}
     {% include "@atoms/02-text/00-headings/_heading.twig" with {
       "heading_level": 3,
@@ -24,9 +24,16 @@
       <div class="tile tile--grid-item tile--guides">
         <a href="/toolsets/mediasite/guides/analytics-reports-mymediasite" hreflang="en">Analytics &amp; Reports in MyMediasite</a>
       </div>
+      <div class="more-link">
+        <a href="#">View all Instructional Guides</a>
+      </div>
+
   {% else %}
     {% for item in items %}
       <div class="tile tile--grid-item tile--guides">{{ item.content }}</div>
     {% endfor %}
+    <div class="more-link">
+      <a href="{{ node_alias }}/guides">View all Instructional Guides</a>
+    </div>
   {% endif %}
 {% endblock %}
