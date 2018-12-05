@@ -1,7 +1,4 @@
 .node--toolset {
-  //breakout the whole content area in order to add full-width background colors
-  // @include breakout;
-
   #basic-info {
     padding-bottom: 2em;
   }
@@ -10,4 +7,20 @@
   .field--name-field-toolset-description {
     margin-bottom: 1em;
   }
+}
+
+//make toolset-section field group backgrounds go full width
+//wrappers are added via jquery
+.toolset-section-wrapper {
+  @include breakout;
+}
+
+.toolset-section {
+  @include wrapper;
+}
+
+.toolset-section-wrapper--resources {
+  background: $gray-lightest;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
 }
