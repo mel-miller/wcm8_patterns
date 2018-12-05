@@ -1,3 +1,9 @@
+.node-type-toolset {
+  .main {
+    margin-bottom: 0;
+  }
+}
+
 .node--toolset {
   #basic-info {
     padding-bottom: 2em;
@@ -23,4 +29,8 @@
   background: $gray-lightest;
   padding-top: 0.5em;
   padding-bottom: 2em;
+}
+
+.toolset-section-wrapper--related-learning-topics {
+  padding-top: 1em;
 }

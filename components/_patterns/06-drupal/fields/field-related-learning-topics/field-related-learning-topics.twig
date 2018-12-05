@@ -1,0 +1,20 @@
+{% extends "@organisms/tile-grid/tile-grid.twig" %}
+{% set grid_base_class = grid_base_class|default('tile__grid tile__grid--topics') %}
+
+{% block grid_content %}
+  {% if pl %}
+    <div class="tile tile--grid-item tile--topics">
+      <a href="#" hreflang="en">Test Learning Topic</a>
+    </div>
+    <div class="tile tile--grid-item tile--topics">
+      <a href="#" hreflang="en">Another Test Topic</a>
+    </div>
+    <div class="tile tile--grid-item tile--topics">
+      <a href="#" hreflang="en"> Yet Another Test Topic</a>
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div class="tile tile--grid-item tile--topics">{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+.toolset-section--related-learning-topics {
+  & > h2 {
+    @extend .section-header;
+
+    margin-bottom: 1em;
+  }
+}
