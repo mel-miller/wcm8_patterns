@@ -71,8 +71,35 @@ This template is for display inside PL only and is meant to emulate drupal field
       {% endfor %}
     </div>
   {% endif %}
-{% else %}
 
+{% elseif field_type == "viewsreference" %}
+  {# if viewsreference #}
+  {% if label_hidden %}
+    {% for item in items %}
+      <div class="{{ classes|join(' ') }}">
+        {% if loop.last %}
+          <a href="{{ item.url }}">{{ item.content }}</a>
+        {% else %}
+          <a href="{{ item.url }}">{{ item.content }}</a>{{ separator }}&nbsp;
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="{{ classes|join(' ') }}">
+      <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
+      {% for item in items %}
+        <div class="field__item">
+          {% if loop.last %}
+            <a href="{{ item.url }}">{{ item.content }}</a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.content }}</a>{{ separator }}&nbsp;
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+{% else %}
   {# if other field types #}
   {% if label_hidden %}
     <div class="{{ classes|join(' ') }}">{{field_content}}</div>

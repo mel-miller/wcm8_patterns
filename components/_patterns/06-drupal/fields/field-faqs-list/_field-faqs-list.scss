@@ -1,0 +1,14 @@
+//faq field on toolsets
+.field--name-field-faqs {
+  .viewsreference--view-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+
+  .more-link {
+    @extend .button;
+
+    margin-top: 1em;
+  }
+}
