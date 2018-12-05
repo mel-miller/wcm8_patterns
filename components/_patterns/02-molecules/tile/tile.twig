@@ -16,7 +16,7 @@
 {% set base_class = 'tile' %}
 
 <div {{ bem(base_class, (tile_modifiers)) }}>
-  <a {{ bem('link', (tile_link_modifiers), base_class) }} href="{{tile_link_url}}">
+  <a {{ bem('link', (tile_link_modifiers), base_class) }} href="{{ tile_link_url }}">
 
     {% if tile_title %}
       <div {{ bem('title', (tile_title_modifiers), base_class) }}>

@@ -9,13 +9,14 @@ set classes = [
 
 <div{{ attributes.addClass(classes) }}>
   <h3 class="toolset-section_subhead">{{ label }}</h3>
-  {% if multiple %}
-  <div class="field__items">
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
+  <div class="tile__grid tile__grid--toolset-featured-guides">
+    {% block grid_content %}
+      {% for item in items %}
+        {% include "@molecules/tile/tile.twig" with {
+          "tile_modifiers": ["grid-item"],
+          "tile_title": item.content,
+        } %}
+      {% endfor %}
+    {% endblock %}
   </div>
-  {% endif %}
 </div>
