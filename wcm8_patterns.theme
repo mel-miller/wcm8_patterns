@@ -189,6 +189,12 @@
  */
  function wcm8_patterns_preprocess_field(array &$variables, $hook) {
    if ($node = \Drupal::request()->attributes->get('node')) {
-     $variables['nid'] = $node->id();
+     //provide nid to field templates
+     $nid = $node->id();
+     $variables['nid'] = $nid;
+
+     //provide node alias to field templates
+     $nodeAlias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
+     $variables['node_alias'] = $nodeAlias;
    }
  }
