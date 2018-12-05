@@ -183,3 +183,12 @@
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+ function wcm8_patterns_preprocess_field(array &$variables, $hook) {
+   if ($node = \Drupal::request()->attributes->get('node')) {
+     $variables['nid'] = $node->id();
+   }
+ }
