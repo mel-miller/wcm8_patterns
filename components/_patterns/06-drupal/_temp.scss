@@ -48,3 +48,11 @@
     display: inline-block;
   }
 }
+
+//used in toolsets resources section
+//TODO: make this reuasable or default h3
+.h3--resources {
+  text-transform: none;
+  font-size: 1.4375rem;
+  font-weight: 700;
+}

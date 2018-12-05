@@ -1,0 +1,19 @@
+.tile__grid--guides {
+  background: $gray-lightest;
+}
+
+.tile--guides {
+  background: white;
+  padding: 1.625em 0;
+
+  &:hover {
+    background: $near-white;
+  }
+
+  a {
+    color: $gray-darker;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+}
