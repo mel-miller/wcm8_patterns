@@ -2,54 +2,6 @@
 
 <div id="resources" class="toolset-section toolset-section--resources">
   <h2>Resources</h2>
-
-  <h3 class="h3 h3--resources">
-    Featured Guides
-  </h3>
-  <div class="tile__grid tile__grid--guides">
-    <div class="tile tile--grid-item tile--guides">
-      <a href="/toolsets/mediasite/guides/getting-started-mediasite" hreflang="en">Getting Started with Mediasite</a>
-    </div>
-    <div class="tile tile--grid-item tile--guides">
-      <a href="/toolsets/mediasite/guides/sharing-mediasite-presentations" hreflang="en">"Sharing" Mediasite Presentations</a>
-    </div>
-    <div class="tile tile--grid-item tile--guides">
-      <a href="/toolsets/mediasite/guides/analytics-reports-mymediasite" hreflang="en">Analytics &amp; Reports in MyMediasite</a>
-    </div>
-  </div>
-
-  <div class="field field--name-field-faqs field--type-viewsreference">
-    <div class="field__label">FAQs</div>
-    <div class="field__item">
-
-      <div class="views-element-container">
-
-        <div class="js-view-dom-id-44cffcec8bb327962e094f9d95051696cd1a8650c01ed837974d74d53b4cd993">
-
-          <div class="views-title-link views-title-link--faq">
-
-            <a href="/toolsets/mediasite/faqs#sect1">Chrome Views Missing in Analytics for Smooth Streaming</a>
-
-          </div>
-          <div class="views-title-link views-title-link--faq">
-
-            <a href="/toolsets/mediasite/faqs#sect2">Connection is not secure error for Mediasite presentations</a>
-
-          </div>
-          <div class="views-title-link views-title-link--faq">
-
-            <a href="/toolsets/mediasite/faqs#sect3">Mediasite Channels do not include a download option</a>
-
-          </div>
-
-          <div class="more-link">
-            <a href="/toolsets/mediasite/faqs">View all FAQs</a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
+  {% include "@drupal/fields/field-toolset-featured-guides/field-toolset-featured-guides.twig" %}
+  {% include "@drupal/fields/field-faqs-list/field-faqs-list.twig" %}
 </div>
