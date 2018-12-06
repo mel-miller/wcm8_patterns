@@ -82,3 +82,10 @@ tab-menu:
     dist/03-organisms/tab-menu/tab-menu.js: {}
   dependencies:
     - core/drupal
+
+tile:
+  js:
+    dist/02-molecules/tile/tile.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
