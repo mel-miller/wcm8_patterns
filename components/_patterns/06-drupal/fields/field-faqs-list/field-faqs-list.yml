@@ -1,0 +1,14 @@
+field_name: field-faqs-list
+field_type: viewsreference
+label: FAQs
+label_hidden: false
+items:
+  1:
+    url: "#"
+    content: "Chrome Views Missing in Analytics for Smooth Streaming"
+  2:
+    url: "#"
+    content: "Connection is not secure error for Mediasite presentations"
+  3:
+    url: "#"
+    content: "Mediasite Channels do not include a download option"

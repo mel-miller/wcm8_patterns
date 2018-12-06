@@ -46,6 +46,13 @@ main-menu:
   dependencies:
     - core/drupal
 
+node-toolset:
+  js:
+    dist/06-drupal/node/node-toolset/node-toolset.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 sprite:
   js:
     components/js/svgxuse.min.js: { attributes: { defer: true } }
@@ -75,3 +82,10 @@ tab-menu:
     dist/03-organisms/tab-menu/tab-menu.js: {}
   dependencies:
     - core/drupal
+
+tile:
+  js:
+    dist/02-molecules/tile/tile.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
