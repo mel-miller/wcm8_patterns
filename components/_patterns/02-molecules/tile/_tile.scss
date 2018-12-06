@@ -10,12 +10,16 @@
 
 .tile__link {
   display: block;
-  padding: 1.75em;
+  padding: 1.5em;
   color: $gray-darker;
   text-decoration: none;
 
   &:hover {
     color: $gray-darkest;
+  }
+
+  &:focus {
+    outline: 2px dotted $teal;
   }
 }
 

@@ -8,6 +8,8 @@ core: 8.x
 libraries:
   - 'wcm8_patterns/global'
   - 'wcm8_patterns/blockquote'
+  - 'wcm8_patterns/tile'
+  
   # - 'wcm8_patterns/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.
