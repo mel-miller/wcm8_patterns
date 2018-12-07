@@ -21,17 +21,21 @@
       <div class="tile tile--grid-item tile--guides">
         <a class="tile__link" href="#" hreflang="en">"Sharing" Mediasite Presentations</a>
       </div>
-      <div class="tile tile--grid-item tile--guides">
+      <!-- <div class="tile tile--grid-item tile--guides">
         <a class="tile__link" href="#" hreflang="en">Analytics &amp; Reports in MyMediasite</a>
-      </div>
-      <div class="more-link">
-        <a href="#">View all Instructional Guides</a>
-      </div>
-
+      </div> -->
   {% else %}
     {% for item in items %}
       <div class="tile tile--grid-item tile--guides">{{ item.content }}</div>
     {% endfor %}
+  {% endif %}
+{% endblock %}
+{% block more_link %}
+  {% if pl %}
+    <div class="more-link">
+      <a href="#">View all Instructional Guides</a>
+    </div>
+  {% else %}
     <div class="more-link">
       <a href="{{ node_alias }}/guides">View all Instructional Guides</a>
     </div>
