@@ -141,8 +141,9 @@
    // add node id and type to body classes
    if ($node = \Drupal::request()->attributes->get('node')) {
      $variables['attributes']['class'][] = 'page-node';
-     $variables['attributes']['class'][] = 'page-node-' . $node->id();
-     $variables['attributes']['class'][] = 'node-type-' . $node->bundle();
+     $variables['attributes']['class'][] = 'page-node--' . $node->id();
+     $variables['attributes']['class'][] = 'node-type--' . $node->bundle();
+     $variables['attributes']['class'][] = 'footer-color--' . theme_get_setting('footer_color');
    }
  }
 
