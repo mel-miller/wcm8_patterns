@@ -1,5 +1,21 @@
-.main {
-  @include wrapper;
+.layout-container {
+  background: white;
+}
 
-  display: block; // Fix for IE weirdness
+body.footer-color {
+  &--dk-gray {
+    background: $gray-darkest;
+  }
+
+  &--md-gray {
+    background: $gray;
+  }
+
+  &--lt-gray {
+    background: $gray-lightest;
+  }
+
+  &--white {
+    background: white;
+  }
 }
