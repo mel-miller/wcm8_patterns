@@ -13,17 +13,19 @@
 
 {# start layout #}
 
-{# fixed header #}
-{% include "@organisms/site-header/site-header.twig" %}
-
-{# start layout container #}
-<div {{ bem('layout-container', (layout_modifiers)) }}>
+<header id="site-header">
+  {# fixed header #}
+  {% include "@organisms/site-header/site-header.twig" %}
 
   {% block primary_menu %}
   <div class="region region--primary_menu">
     {% include "@molecules/menus/main-menu/main-menu.twig" %}
   </div>
   {% endblock %}
+</header>
+
+{# start layout container #}
+<div {{ bem('layout-container', (layout_modifiers)) }}>
 
   {% block hero %}
   {% endblock %}

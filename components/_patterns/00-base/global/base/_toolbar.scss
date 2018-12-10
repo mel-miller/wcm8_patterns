@@ -1,0 +1,18 @@
+.adminimal-admin-toolbar .toolbar .toolbar-bar {
+  background-color: black;
+}
+
+.adminimal-admin-toolbar .toolbar-tray .toolbar-menu li,
+.adminimal-admin-toolbar .toolbar-tray a,
+.adminimal-admin-toolbar .toolbar-tray span,
+.adminimal-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item.is-active,
+.adminimal-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item:focus,
+.adminimal-admin-toolbar .toolbar .toolbar-tray,
+.adminimal-admin-toolbar .toolbar .toolbar-toggle-orientation {
+  background: #3f3f3f;
+  color: white;
+
+  & a {
+    color: white;
+  }
+}

@@ -6,18 +6,20 @@ $sidebar-width: 25%;
 $gutter: $space;
 $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
-.main,
-.region-inner {
+.main {
   @include wrapper;
 
-  margin: $space-one-half 0;
+  display: block; // Fix for IE weirdness
 }
 
-.main {
-  margin-bottom: $space;
+.region-inner {
+  @include wrapper;
 }
 
-//
+.region--content {
+  padding-top: 1em;
+}
+
 // Layout Using Flexbox (IE11+).
 // Remove this and uncomment Grid code below to use CSS Grid.
 //
@@ -29,7 +31,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 }
 
 .main-sidebar {
-  margin-bottom: $space;
+  // margin-bottom: $space;
 
   @include large {
     order: 2;

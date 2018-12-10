@@ -18,7 +18,7 @@
 //make toolset-section field group backgrounds go full width
 //wrappers are added via jquery
 .toolset-section-wrapper {
-  @include breakout;
+  @include breakout(0);
 }
 
 .toolset-section {

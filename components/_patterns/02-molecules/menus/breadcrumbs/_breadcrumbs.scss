@@ -3,7 +3,7 @@ $breadcrumb-active: $gray-darkest;
 .breadcrumb {
   @include list-reset;
 
-  margin-top: 1em;
+  padding: 1em 0;
 }
 
 .breadcrumb__item,
