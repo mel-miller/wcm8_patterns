@@ -1,1 +1,7 @@
-//empty
+.region--content {
+  margin-bottom: $space;
+}
+
+.node-type--toolset .region--content {
+  margin-bottom: 0;
+}
