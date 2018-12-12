@@ -10,7 +10,7 @@
         var caution = '<div class="callout-icon"><span class="visually-hidden">Caution</span><i class="fas fa-exclamation"></i></div>';
         var ux_tip = '<div class="callout-icon"><span class="visually-hidden">UX Tip</span><i class="fas fa-asterisk"></i></div>';
 
-        $(this).wrapInner('<div class="callout-body"></div>');
+        $(this).wrapInner('<div class="callout-body"></div>').css('display', 'flex');
 
         if ($(this).hasClass('callout--caution')) {
           $(this).prepend(caution);
@@ -19,6 +19,7 @@
         }
 
       });
+
 
       //for divs
       $(context).find('div.callout').each(function() {
