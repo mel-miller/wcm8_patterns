@@ -105,7 +105,7 @@ This template is for display inside PL only and is meant to emulate drupal field
   {% else %}
     <div class="{{ classes|join(' ') }}">
       <div class="{{ title_classes|join(' ') }}">{{ label }}</div>
-      <div class="field__item">{{field_content}}</div>
+      <div class="field__item"><p>{{field_content}}</p></div>
     </div>
   {% endif %}
 {% endif %}
