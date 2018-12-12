@@ -27,7 +27,7 @@
         var height = $(this).innerHeight();
 
         //if the callout gets "too tall" nest the icon in the corner instead of the whole height
-        if (height > 150) {
+        if (height > 120) {
           $('.callout-icon', this).css({
             'height': '3.25em',
             'border-radius': '3px 0 5px'
