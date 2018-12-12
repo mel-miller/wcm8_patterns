@@ -38,17 +38,17 @@
  */
 #}
 {%
-set classes = [
-'field',
-'field--name-' ~ field_name|clean_class,
-'field--type-' ~ field_type|clean_class,
-]
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+  ]
 %}
 {%
-set title_classes = [
-'field__label',
-label_display == 'visually_hidden' ? 'visually-hidden',
-]
+  set title_classes = [
+    'field__label',
+    'field__label--' ~ label_display,
+  ]
 %}
 
 {% if label_hidden %}

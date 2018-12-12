@@ -1,13 +1,14 @@
 // Create a mixin for paragraph styles that can be implemented
 // in components with other classnames.
-@mixin paragraph($margin: 0 0 1em) {
+@mixin paragraph($margin: 0 0 $space-one-half) {
   margin: #{$margin};
 }
 
 @mixin body-copy {
   font-family: $font-body;
-  font-size: 0.9375rem;
-  line-height: 1.5em;
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 400;
 }
 
 @mixin no-bottom {
@@ -23,6 +24,8 @@ body {
 p,
 .paragraph {
   @include paragraph;
+
+  font-weight: 300;
 }
 
 .hr {

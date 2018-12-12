@@ -1,9 +1,23 @@
+.field {
+  margin-top: $space-one-half;
+  margin-bottom: $space-one-half;
+}
+
 .field__label {
-  font-size: 0.875rem;
   font-weight: 600;
+  margin-bottom: $space-one-tenth;
 }
 
 .field__label--inline {
   float: left;
-  margin-right: 0.5em;
+  margin-right: $space-one-fifth;
+  margin-bottom: 0;
+
+  &::after {
+    content: ":";
+  }
+}
+
+.field__label--visually_hidden {
+  @include visually-hidden;
 }
