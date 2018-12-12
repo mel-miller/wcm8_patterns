@@ -8,8 +8,9 @@ core: 8.x
 libraries:
   - 'wcm8_patterns/global'
   - 'wcm8_patterns/blockquote'
+  - 'wcm8_patterns/callout'
   - 'wcm8_patterns/tile'
-  
+
   # - 'wcm8_patterns/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.
@@ -24,6 +25,8 @@ libraries:
 # CKEditor stylesheet loads in wysiwyg to give content editors a better experience
 ckeditor_stylesheets:
   - dist/style.css
+  - https://www.osu.edu/assets/fonts/webfonts.css
+
 
 # Drupal regions
 regions:
