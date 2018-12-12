@@ -134,18 +134,18 @@
    }
  }
 
- /**
-  * Implements hook_preprocess_html().
-  */
- function wcm8_patterns_preprocess_html(array &$variables) {
-   // add node id and type to body classes
-   if ($node = \Drupal::request()->attributes->get('node')) {
-     $variables['attributes']['class'][] = 'page-node';
-     $variables['attributes']['class'][] = 'page-node--' . $node->id();
-     $variables['attributes']['class'][] = 'node-type--' . $node->bundle();
-     $variables['attributes']['class'][] = 'footer-color--' . theme_get_setting('footer_color');
-   }
- }
+/**
+* Implements hook_preprocess_html().
+*/
+function wcm8_patterns_preprocess_html(array &$variables) {
+  $variables['attributes']['class'][] = 'footer-color--' . theme_get_setting('footer_color');
+  // add node id and type to body classes
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['attributes']['class'][] = 'page-node';
+    $variables['attributes']['class'][] = 'page-node--' . $node->id();
+    $variables['attributes']['class'][] = 'node-type--' . $node->bundle();
+  }
+}
 
  /**
   * Implements hook_preprocess_paragraph().
