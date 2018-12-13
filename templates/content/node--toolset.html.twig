@@ -71,4 +71,8 @@
  */
 #}
 
-{% include "@drupal/node/node-toolset/node-toolset.twig" %}
+{% embed "@drupal/node/node-toolset/node-toolset.twig" %}
+  {% block node_content %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}

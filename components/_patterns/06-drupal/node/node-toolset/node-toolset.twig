@@ -1,12 +1,26 @@
 {{ attach_library('wcm8_patterns/node-toolset') }}
 
-{% include "@atoms/02-text/00-headings/_heading.twig" with {
-  "heading_level": 1,
-} %}
+{% if node_bundle|length == 0 %}
+  {% set node_bundle = node.bundle %}
+{% endif %}
 
-{% embed "@drupal/node/_node.twig" %}
-  {% block node_content %}
-    {% if pl %}
+<article {{ bem('node', [node_bundle]) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 2,
+      "heading": label,
+      "heading_url": url,
+      "heading_link_attributes": {
+        'rel': 'bookmark'
+      },
+    } %}
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes }}>
+    {% block node_content %}
       <div id="basic-info" class="toolset-section toolset-section--basic-info">
         {% include "@drupal/fields/field-toolset-summary/field-toolset-summary.twig" with {
           field_content: field_toolset_summary,
@@ -32,10 +46,7 @@
       {% include "@organisms/resources-section/resources-section.twig" %}
       {% include "@organisms/related-topics-section/related-topics-section.twig" %}
 
-    {% else %}
-      {{ content.group_basic_info }}
-      {{ content.group_resources }}
-      {{ content.group_related_learning_topics }}
-    {% endif %}
-  {% endblock %}
-{% endembed %}
+    {% endblock %}
+  </div>
+
+</article>
