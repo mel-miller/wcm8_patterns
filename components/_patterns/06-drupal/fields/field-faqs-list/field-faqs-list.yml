@@ -1,4 +1,4 @@
-field_name: field-faqs-list
+field_name: field-faqs
 field_type: viewsreference
 label: FAQs
 label_hidden: false
