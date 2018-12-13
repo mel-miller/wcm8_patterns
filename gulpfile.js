@@ -31,7 +31,7 @@
       .pipe(gulp.dest('build'));
 
     //Publish the build directory to github pages.
-    ghpages.publish('./build', {remote: 'gh', message: 'auto-generated commit via pl-deploy TEST'}, function(err){
+    ghpages.publish('./build', {remote: 'gh', branch: 'gh-pages', message: 'auto-generated commit via pl-deploy TEST'}, function(err){
       if (err === undefined) {
         console.log('PL successfully deployed to github!');
       } else {
