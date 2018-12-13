@@ -1,7 +1,7 @@
 # Ignore compiled files.
 # dist -- commenting out for now
 vendor
-build
+# build -- needed for pl-deploy
 
 # Pattern Lab (ignored initially)
 pattern-lab
