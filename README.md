@@ -176,7 +176,8 @@ Follow existing organizational and naming conventions.
 
 ## Deployment
 
-### Use Gitflow -- more info TBD
+### Use Gitflow when developing this theme
+[Here's] (https://danielkummer.github.io/git-flow-cheatsheet/) a good cheatsheet.
 
 ### Deploy Pattern Lab to Github
 1. Add `gh` remote upstream if it doesn't already exist: `git remote add gh https://github.com/mel-miller/wcm8_patterns.git`
@@ -194,10 +195,9 @@ For this theme I am treating the header and footer as fixed regions that do not 
 - Site Footer: Contains the address block, social media icons, and footer text.
 
 **Drupal Regions**
-- Primary Menu (should this be part of the header?)
+- Primary Menu
 - Hero
-- Breadcrumbs (should this be fixed too?)
-- Highlighted
+- Breadcrumbs
 - Help
 - Content
 - Sidebar
