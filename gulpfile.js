@@ -27,7 +27,7 @@
     //TODO: Can we detect if the gh remote exists first and then create one if not
 
     //create build directory
-    gulp.src(['./dist/**/*', './pattern-lab/public/**/*', './images/**/*',], { base: './'})
+    gulp.src(['./dist/**/*', './pattern-lab/public/**/*', './images/**/*'], { base: './'})
       .pipe(gulp.dest('build'));
 
     //Publish the build directory to github pages.
