@@ -1,5 +1,19 @@
-{% if pl %}
-  {% include "@drupal/fields/_pl-field.twig" %}
-{% else %}
-  {% include "@drupal/fields/_field.twig" %}
-{% endif %}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% block toolset_button %}
+    {% for item in items %}
+      {% include "@atoms/01-links/link/link.twig" with {
+        link_content: item.title,
+        link_url: item.url,
+        link_base_class: 'button',
+      } %}
+    {% endfor %}
+  {% endblock %}
+</div>

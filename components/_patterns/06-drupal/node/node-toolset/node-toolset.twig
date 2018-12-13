@@ -18,12 +18,15 @@
           field_name: "field-toolset-description",
           field_type: "text-long"
         } %}
-        {% include "@drupal/fields/field-link-to-tool/field-link-to-tool.twig" with {
-          field_content: field_link_to_tool,
-          field_name: "field-link-to-tool",
-          field_type: "link",
-          field_content_url: '#'
-        } %}
+        {% embed "@drupal/fields/field-link-to-tool/field-link-to-tool.twig" %}
+          {% block toolset_button %}
+            {% include "@atoms/01-links/link/link.twig" with {
+              link_content: toolset_link_title,
+              link_url: toolset_link_url,
+              link_base_class: 'button',
+            } %}
+          {% endblock %}
+        {% endembed %}
       </div>
 
       {% include "@organisms/resources-section/resources-section.twig" %}
