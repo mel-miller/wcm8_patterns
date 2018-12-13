@@ -27,11 +27,11 @@
     //TODO: Can we detect if the gh remote exists first and then create one if not
 
     //create build directory
-    gulp.src(['./dist/**/*', './pattern-lab/public/**/*', './images/**/*'], { base: './'})
+    gulp.src(['./dist/**/*', './pattern-lab/public/**/*'], { base: './'})
       .pipe(gulp.dest('build'));
 
     //Publish the build directory to github pages.
-    ghpages.publish('./build', {remote: 'gh', branch: 'gh-pages', message: 'auto-generated commit via pl-deploy TEST'}, function(err){
+    ghpages.publish('./build', {remote: 'gh', branch: 'gh-pages', message: 'auto-generated commit via pl-deploy'}, function(err){
       if (err === undefined) {
         console.log('PL successfully deployed to github!');
       } else {

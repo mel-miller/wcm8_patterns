@@ -1,7 +1,6 @@
 # setting base-level sample content
 # values can be overridden on a per-component basis
 pl: yes
-base_path: "../.."
 prefix:
   Office of
 site_name:
