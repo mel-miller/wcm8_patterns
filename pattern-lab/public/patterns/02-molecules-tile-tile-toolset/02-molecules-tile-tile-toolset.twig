@@ -1,0 +1,41 @@
+{#
+/**
+ * Available variables:
+ * - tile_link_url - the url the tile should link to
+ * - tile_link_modifiers - array of modifiers to add to the base classname of the wrapper
+ * - tile_title - the content of the title component
+ * - tile_title_modifiers -
+ * - tile_subtitle - the content of the subtitle component
+ * - tile_subtitle_modifiers -
+ * - tile_body - the content of the body component
+ * - tile_body_modifiers - array of modifiers to add to the base classname of the body
+ *
+#}
+
+{% set base_class = 'tile' %}
+
+<div {{ bem(base_class, (tile_modifiers)) }}>
+  <a {{ bem('link', (tile_link_modifiers), base_class) }} href="{{ tile_link_url }}">
+
+    {% if tile_title %}
+      <div {{ bem('title', (tile_title_modifiers), base_class) }}>
+        {{ tile_title }}
+      </div>
+    {% endif %}
+
+    {% if tile_subtitle %}
+    <div {{ bem('subtitle', (tile_subtitle_modifiers), base_class) }}>
+      {{ tile_subtitle }}
+    </div>
+    {% endif %}
+
+    {% if tile_body %}
+    <div {{ bem('body', (tile_body_modifiers), base_class) }}>
+      {% include "@atoms/02-text/text/01-paragraph.twig" with {
+        "paragraph_content": tile_body
+      } %}
+    </div>
+    {% endif %}
+
+  </a>
+</div>
